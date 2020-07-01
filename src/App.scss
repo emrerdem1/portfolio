@@ -9,7 +9,7 @@ $second-color: #6b6e70;
 $bg-color: #222629;
 $fire-color: #ff652f;
 $sun-color: #ffe400;
-$purple-color: #25274d;
+$purple-color: linear-gradient(to right, #24243e, #302b63, #0f0c29);
 $wave1: #cccccc;
 $wave2: #cb2d6f;
 $wave3: #2d283e;
@@ -55,7 +55,8 @@ body {
 }
 
 #intro-section {
-  background-color: $purple-color;
+  background: $purple-color;
+  background-size: 180%, 100%;
   height: 80vh;
   position: relative;
   > svg {
@@ -98,14 +99,17 @@ body {
 
       .path1 {
         fill: $fire-color;
-        animation: animate 1s linear 1s infinite alternate;
+        width: 200vw;
+        animation: animate 11s linear 1s infinite alternate;
       }
       .path2 {
-        fill: $primary-color;
-        animation: animate 3s linear 3s infinite alternate;
+        fill: url(#gradient);
+        width: 200vw;
+        animation: animate 15s linear 3s infinite alternate;
       }
       .path3 {
-        fill: $purple-color;
+        fill: url(#gradient);
+        
       }
     }
 
@@ -114,7 +118,8 @@ body {
       display: block;
       min-width: calc(400% + 1.3px);
       height: 195px;
-      fill: $purple-color;
+      background-size: 180%, 100%;
+      fill: url(#gradient);
     }
   }
 
@@ -126,14 +131,10 @@ body {
 }
 
 @keyframes animate {
-  0% {
-    height: 60px;
-    width: 1000px;
+  from {
+    transform: translateX(0);
   }
-
-  30%,
-  100% {
-    height: 70px;
-    width: 5000px;
+  to {
+    transform: translateX(30%);
   }
 }

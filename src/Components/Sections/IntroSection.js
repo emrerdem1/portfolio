@@ -3,9 +3,15 @@ import React from "react";
 export const IntroSection = () => {
   return (
     <div className="row" id="intro-section">
-      <div className="col">intro a</div>
-      <div className="col">intro b</div>
-      <div className="col">intro c</div>
+      <div className="col-6">
+        <div></div>
+      </div>
+      <div className="offset-1">
+        <div></div>
+      </div>
+      <div className="col-4">
+        <div></div>
+      </div>
       <svg viewBox="0 0 1440 320">
         <path
           fill="#222629"
