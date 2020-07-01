@@ -1,14 +1,26 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
 
 export const Sidebar = () => {
   return (
-    <Container id="sidebar-section">
-      <Row xl={2} lg={2} md={1}>
-        <Col>sidebar</Col>
-        <Col>sidebar</Col>
-        <Col>sidebar</Col>
-      </Row>
-    </Container>
+    <div
+      className="row col-xl-1 col-lg-1 col-md-2 d-flex flex-column"
+      id="sidebar"
+    >
+      <div className="col-2 d-flex align-items-center">
+        <div className="sidebar-item">logo</div>
+      </div>
+      <div className="col-2 d-flex align-items-center">
+        <div className="sidebar-item">a</div>
+      </div>
+      <div className="col-2 d-flex align-items-center">
+        <div className="sidebar-item">b</div>
+      </div>
+      <div className="col-2 d-flex align-items-center">
+        <div className="sidebar-item">c</div>
+      </div>
+      <div className="col-2 d-flex align-items-center">
+        <div className="sidebar-item">resume</div>
+      </div>
+    </div>
   );
 };
