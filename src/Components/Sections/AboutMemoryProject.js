@@ -1,14 +1,12 @@
-import React from 'react'
-import { Container, Row, Col } from "react-bootstrap";
+import React from "react";
 
 export const AboutMemoryProject = () => {
-    return (
-      <Container id="about-section">
-        <Row>
-          <Col>about</Col>
-          <Col>memories</Col>
-          <Col>projects</Col>
-        </Row>
-      </Container>
-    );
-}
+  return (
+    <div className="row" id="about-section">
+      <div className="col">about</div>
+      <div className="col">memories</div>
+      <div className="col">projects</div>
+      
+    </div>
+  );
+};

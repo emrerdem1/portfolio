@@ -1,16 +1,12 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Wave } from "./Wave";
+import { ContactForm } from "./ContactForm";
 
 export const Contact = () => {
   return (
-    <Container id="contact-section">
-      <Row>
-        <Col>contact me bar</Col>
-      </Row>
-      <Row>
-        <Col>contact image</Col>
-        <Col>contact form</Col>
-      </Row>
-    </Container>
+    <div className="container" id="contact-section">
+      <Wave />
+      <ContactForm />
+    </div>
   );
 };
