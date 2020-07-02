@@ -1,6 +1,6 @@
 import React from "react";
-import { Wave } from "./Wave";
-import { ContactForm } from "./ContactForm";
+import { Wave } from "./ContactComponents/Wave";
+import { ContactForm } from "./ContactComponents/ContactForm";
 
 export const Contact = () => {
   return (

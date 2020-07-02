@@ -9,7 +9,7 @@ $second-color: #6b6e70;
 $bg-color: #222629;
 $fire-color: #ff652f;
 $sun-color: #ffe400;
-$purple-color: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+$purple-color: linear-gradient(to right, #2a2a61, #5048a2, #7064de);
 $wave1: #cccccc;
 $wave2: #cb2d6f;
 $wave3: #2d283e;
@@ -32,20 +32,117 @@ body {
   width: 100%;
   padding: 0;
   margin: auto;
+  transition: all 0.5s ease;
+  box-shadow: 4px 3px 11px 0px rgba(0, 0, 0, 0.45);
+  z-index: 1;
+  background-color: $bg-color;
 
   .sidebar-item {
     width: 100%;
     height: 70px;
+    text-align: center;
+    min-width: 112px;
+    color: $second-color;
+    transition: all 0.5s ease;
+
+    &:hover {
+      background-color: #0000001c;
+      border-radius: 5px;
+      color: $primary-color;
+      cursor: pointer;
+    }
+
+    .fas,
+    .fab {
+      width: 100%;
+      font-size: 32px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .fa-angle-double-up {
+      transform: rotate(90deg);
+      color: $second-color;
+      position: absolute;
+      width: 35px;
+      display: inline-block;
+      height: 35px;
+      transform-origin: center top;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &::after {
+      content: attr(title);
+      color: #86c2329e;
+      position: absolute;
+      bottom: -9px;
+      font-size: 12px;
+      left: 50%;
+      transition: all 1s ease-in-out;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    .sidebar-span {
+      display: inline-block;
+      max-width: 70px;
+      font-size: 15px;
+      padding-right: 20px;
+      font-weight: 500;
+    }
   }
 
-  > div {
+  .sidebar-item.collapse-text:hover::after {
+    color: $second-color;
+    padding-bottom: 6px;
+    font-size: 12px;
+  }
+  .collapse-text {
+    background-color: #00000052;
+  }
+
+  a > div {
     min-width: 100%;
     margin-bottom: 15px;
     padding: 0;
+    border: none;
+    transition: border 0.2s linear;
+
+    &:hover {
+      border-right: 1.5px solid $fire-color;
+    }
   }
 
-  > div:nth-child(1) {
-    margin-bottom: 30px;
+  .sidebar-collapse-section {
+    margin-bottom: 50px;
+    &:hover {
+      border: none;
+    }
+  }
+}
+
+.sidebar-open {
+  position: fixed !important;
+  z-index: 100 !important;
+  min-width: 160px !important;
+  background-color: $bg-color !important;
+
+  .fa-angle-double-up {
+    transform: rotate(270deg) !important;
+    transform-origin: left !important;
+  }
+
+  .sidebar-item:hover::after {
+    opacity: 0 !important;
   }
 }
 
@@ -59,6 +156,7 @@ body {
   background-size: 180%, 100%;
   height: 80vh;
   position: relative;
+
   > svg {
     width: 100%;
     display: block;
@@ -70,6 +168,7 @@ body {
 #about-section {
   height: 60vh;
   position: relative;
+
   > svg {
     width: 100%;
     display: block;
@@ -92,8 +191,8 @@ body {
     > .triple-wave {
       position: relative;
       display: block;
-      min-width: calc(115% + 1.3px) !important;
-      width: calc(115% + 1.3px) !important;
+      min-width: calc(400% + 1.3px);
+      width: calc(400% + 1.3px) !important;
       height: 60px;
       transform: rotateY(180deg);
 
@@ -103,13 +202,18 @@ body {
         animation: animate 11s linear 1s infinite alternate;
       }
       .path2 {
-        fill: url(#gradient);
+        fill: $fire-color;
         width: 200vw;
-        animation: animate 15s linear 3s infinite alternate;
+        animation: animate 11s linear 3s infinite alternate;
       }
       .path3 {
-        fill: url(#gradient);
-        
+        transform: translateX(0) rotateY(-180deg) !important;
+        fill: url(#gradient) !important;
+        position: relative !important;
+        display: block !important;
+        min-width: calc(400% + 1.3px) !important;
+        height: 195px !important;
+        transform-origin: center;
       }
     }
 
@@ -132,7 +236,7 @@ body {
 
 @keyframes animate {
   from {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
   to {
     transform: translateX(30%);

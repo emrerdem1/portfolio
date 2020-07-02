@@ -6,7 +6,6 @@ export const AboutMemoryProject = () => {
       <div className="col">about</div>
       <div className="col">memories</div>
       <div className="col">projects</div>
-      
     </div>
   );
 };
