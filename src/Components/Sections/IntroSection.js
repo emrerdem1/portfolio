@@ -1,16 +1,15 @@
 import React from "react";
+import { SvgContainer } from "./SvgContainer";
 
 export const IntroSection = () => {
   return (
     <div className="row" id="intro-section">
-      <div className="col-6">
-        <div></div>
-      </div>
+      <SvgContainer />
       <div className="offset-1">
         <div></div>
       </div>
       <div className="col-4">
-        <div></div>
+        <div className="avatar"></div>
       </div>
       <svg viewBox="0 0 1440 320">
         <path
