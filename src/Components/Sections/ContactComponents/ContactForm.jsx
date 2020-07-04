@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import emailjs from "emailjs-com";
 import { SERVICE_ID, TEMPLATE_ID, USER_ID } from "./EmailCredit";
 
@@ -8,12 +8,13 @@ export const ContactForm = () => {
     mail: "empty",
     gsm: "empty",
     subject: "empty",
-    message: "empty"
+    message: "empty",
   });
 
-  const handleForm = ({ target }) => setInput(prevState => {
-    return {...prevState, [target.name]: target.value}
-  });
+  const handleForm = ({ target }) =>
+    setInput((prevState) => {
+      return { ...prevState, [target.name]: target.value };
+    });
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -29,7 +30,12 @@ export const ContactForm = () => {
 
   return (
     <div className="row contact-form__wrapper">
-      <div className="col-4 contact-svg"></div>
+      <div className="col-4 contact-svg">
+        <h2 className="contact-svg__title">Contact me!</h2>
+        <p className="contact-svg__text">
+          I love making acquaintance with new people!
+        </p>
+      </div>
       <div className="col-6 form-container">
         <form>
           <input
