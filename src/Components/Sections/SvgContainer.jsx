@@ -2,7 +2,7 @@ import React from "react";
 
 export const SvgContainer = () => {
   return (
-    <div className="col-6 svg-container">
+    <div className="col-12 svg-container">
       <i className="fas fa-qrcode icon-1"></i>
       <i className="fas fa-brain icon-2"></i>
       <i className="fas fa-code-branch icon-3"></i>
