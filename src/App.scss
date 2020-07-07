@@ -102,6 +102,7 @@ body {
       transition: all 0.3s ease-in-out;
       padding: 0;
       left: 56%;
+      transform-box: fill-box;
     }
 
     &::after {
@@ -344,7 +345,7 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 200%;
+    height: 250%;
     background: url(./a.svg);
     background-size: 200%;
     opacity: 0.2;
@@ -360,6 +361,7 @@ body {
   }
   .row {
     min-height: 300px;
+    margin-bottom: 70px;
 
     .about-greetings {
       min-height: 100px;
@@ -393,11 +395,40 @@ body {
       }
     }
 
+    //sass and scss
+
     .main-hall__icons {
       margin: 10px;
       height: 30vh;
       text-align: center;
       cursor: pointer;
+
+      &--memory {
+        background: url("./memories.svg") no-repeat;
+        top: 0;
+        left: 0;
+        min-height: 250px;
+        width: 100%;
+        background-size: contain;
+      }
+
+      &--story {
+        background: url("./story.svg") no-repeat;
+        top: 0;
+        left: 0;
+        min-height: 250px;
+        width: 100%;
+        background-size: contain;
+      }
+
+      &--project {
+        background: url("./project.svg") no-repeat;
+        top: 0;
+        left: 0;
+        min-height: 250px;
+        width: 100%;
+        background-size: contain;
+      }
 
       .fas,
       .fab {
@@ -414,12 +445,159 @@ body {
     border: 11px ridge #848b90;
     flex-direction: column;
   }
+
+  .memory-open {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+
+    h2 {
+      width: 100%;
+      text-align: center;
+    }
+
+    .slick-slider {
+      width: 80vw !important;
+
+      .slick-list {
+        width: 90% !important;
+        margin: auto;
+        text-align: center;
+      }
+
+      > .slick-arrow::before,
+      .slick-arrow::after {
+        font-size: 35px;
+      }
+
+      > .slick-dots > li > button {
+        font-size: 15px;
+      }
+
+      .slick-cloned > div {
+        text-align: center;
+      }
+
+      span {
+        color: black;
+      }
+    }
+
+    .img-frame {
+      display: inline-block;
+      background-color: white;
+      text-align: center;
+      width: 90% !important;
+      padding-top: 20px;
+      height: 350px;
+      margin-bottom: 20px;
+
+      img {
+        width: 80%;
+        height: 80%;
+        background-color: red;
+        margin: auto;
+        width: calc(100% - 40px) !important;
+      }
+    }
+  }
+
+  .project-open {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 100;
+
+    h2 {
+      text-align: center;
+    }
+
+    figure {
+      display: inline-block;
+    }
+  }
+
   .story-open {
+    background-image: linear-gradient(
+        164deg,
+        rgba(2, 2, 2, 0.21) 75%,
+        #1b1a1aa6 32%
+      ),
+      linear-gradient(168deg, rgba(0, 0, 0, 0.61) 60%, #102eff 148%),
+      linear-gradient(164deg, rgb(39, 38, 38) 45%, #1a37a0de 32%);
+    background-blend-mode: hard-light, color, screen, soft-light;
+
     &__whereabouts,
     &__education,
     &__hobby,
     &__goal {
       display: flex;
+      min-height: 200px;
+      justify-content: space-around;
+      align-items: center;
+
+      > svg {
+        min-width: 200px;
+        position: relative;
+      }
+
+      &--svg1 {
+        background: url("./whence.svg") no-repeat;
+        top: 0;
+        left: 0;
+        min-height: 250px;
+        width: 100%;
+        background-size: contain;
+      }
+
+      &--svg2 {
+        background: url("./story-education.svg") no-repeat;
+        top: 0;
+        left: 0;
+        min-height: 250px;
+        width: 100%;
+        background-size: contain;
+      }
+
+      &--svg3 {
+        background: url("./story-hobby.svg") no-repeat;
+        top: 0;
+        left: 0;
+        min-height: 250px;
+        width: 100%;
+        background-size: contain;
+      }
+
+      &--svg4 {
+        background: url("./story-goal.svg") no-repeat;
+        top: 0;
+        left: 0;
+        min-height: 250px;
+        width: 100%;
+        background-size: contain;
+      }
+
+      > div {
+        padding: 15px;
+
+        > h2 {
+          position: relative;
+          margin-bottom: 15px;
+
+          &::after {
+            content: "";
+            position: absolute;
+            width: 10%;
+            height: 3px;
+            background-color: green;
+            left: 0;
+            bottom: -5px;
+          }
+        }
+      }
     }
   }
 }

@@ -45,19 +45,19 @@ export const AboutMemoryProject = () => {
           className="col mx-4 main-hall__icons"
           onClick={() => invokeReducer("story")}
         >
-          <i className="fas fa-cookie"></i>
+          <svg className="main-hall__icons--story"></svg>
         </div>
         <div
           className="col mx-4 main-hall__icons"
           onClick={() => invokeReducer("memory")}
         >
-          <i className="fas fa-holly-berry"></i>
+          <svg className="main-hall__icons--memory"></svg>
         </div>
         <div
           className="col mx-4 main-hall__icons"
           onClick={() => invokeReducer("project")}
         >
-          <i className="fab fa-stack-overflow"></i>
+          <svg className="main-hall__icons--project"></svg>
         </div>
       </div>
       {story ? (

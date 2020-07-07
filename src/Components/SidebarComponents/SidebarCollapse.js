@@ -9,9 +9,7 @@ export const SidebarCollapse = ({ isOpen, setOpen }) => {
         onClick={() => setOpen(!isOpen)}
       >
         <div className="sidebar-item collapse-text" title="Collapse">
-          <i className="fas fa-angle-double-up">
-            {isOpen && <span className="sidebar-span"></span>}
-          </i>
+          <i className="fas fa-angle-double-up"></i>
         </div>
       </div>
     </Link>
