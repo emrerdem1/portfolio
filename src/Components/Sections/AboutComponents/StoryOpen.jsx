@@ -3,6 +3,7 @@ import React from "react";
 export const StoryOpen = () => {
   return (
     <div className="story-open">
+      <h2>Here's all about you need to know for now!</h2>
       <div className="story-open__whereabouts">
         <svg className="story-open__whereabouts--svg1"></svg>
         <div>
