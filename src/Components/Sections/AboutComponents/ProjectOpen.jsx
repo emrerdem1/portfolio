@@ -55,7 +55,7 @@ export const ProjectOpen = () => {
               architecto laborum.
             </span>
             <span className="svg-tools">
-              HTML, CSS, Bootstrap, Material UI, ReactJS, Firebase
+              HTML, CSS, React-Bootstrap, Material UI, ReactJS, Firebase
             </span>
           </div>
           <div className="project-open__single--board-anchor">
