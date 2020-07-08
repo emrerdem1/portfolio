@@ -575,6 +575,7 @@ body {
       align-items: center;
       margin: 10px auto 50px;
       flex-wrap: wrap;
+      max-height: 450px;
 
       .project-description {
         width: 50%;
@@ -586,53 +587,76 @@ body {
       &--board {
         height: 90%;
         min-width: 250px;
-        width: 50%;
+        width: 100%;
         text-align: center;
 
-        .svg-description::before {
-          content: "";
+        .svg-description {
           width: 50%;
-          height: 100%;
-          position: absolute;
-          background: url("./project-detail.svg") no-repeat;
-          right: -40%;
-          top: 20%;
+          height: 70%;
+          display: block;
+          margin-left: 53%;
+          padding-top: 10%;
+
+          &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: url("./project-detail.svg") no-repeat;
+            right: -40%;
+            top: 20%;
+            background-size: 30%;
+          }
+
+          &::after {
+            content: "Description";
+            color: #ffffffb5;
+            font-size: 20px;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 10%;
+            top: 13%;
+            background-size: 30%;
+          }
         }
 
-        .svg-description::after {
-          content: "Description";
-          color: #ffffffb5;
-          font-size: 20px;
-          position: absolute;
+        .svg-tools {
           width: 50%;
-          height: 100%;
-          right: -48%;
-          top: 13%;
-        }
+          height: 35%;
+          display: block;
+          margin-left: 53%;
+          padding-top: 5%;
+          text-align: start;
 
-        .svg-tools::before {
-          content: "";
-          width: 50%;
-          height: 100%;
-          position: absolute;
-          background: url("./project-tools.svg") no-repeat;
-          right: -40%;
-          top: 75%;
-        }
+          &::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: url("./project-tools.svg") no-repeat;
+            right: -40%;
+            top: 75%;
+            background-size: 30%;
+          }
 
-        .svg-tools::after {
-          content: "Tools";
-          color: #ffffffb5;
-          font-size: 20px;
-          position: absolute;
-          width: 50%;
-          height: 100%;
-          right: -48%;
-          top: 69%;
+          &::after {
+            content: "Tools";
+            color: #ffffffb5;
+            font-size: 20px;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 10%;
+            top: 69%;
+            background-size: 30%;
+            text-align: center;
+          }
         }
 
         &-anchor {
-          margin: 10px 150px 10px;
+          width: 20%;
+          margin: 10px auto 0 150px;
           height: 35px;
           display: flex;
           justify-content: space-around;
@@ -657,7 +681,7 @@ body {
         height: 100%;
         background: url("./madlibs.svg") no-repeat;
         display: block;
-        background-size: 100%;
+        background-size: 50%;
         position: relative;
       }
 
@@ -668,6 +692,7 @@ body {
         display: block;
         background-size: 100%;
         position: relative;
+        background-size: 50%;
       }
 
       &--board-svg {
@@ -677,6 +702,7 @@ body {
         display: block;
         background-size: 100%;
         position: relative;
+        background-size: 50%;
       }
     }
 
