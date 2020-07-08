@@ -31,7 +31,10 @@ export const AboutMemoryProject = () => {
   const invokeReducer = (section) => dispatch({ type: section });
 
   return (
-    <div className="container" id="about-section">
+    <div
+      className={`container ${story || memory || project ? "opened" : ''}`}
+      id="about-section"
+    >
       <div className="row d-flex flex-wrap justify-content-center align-items-center mx-0">
         <div className="col-12 about-greetings">
           <h2 className="about-greetings__title">
