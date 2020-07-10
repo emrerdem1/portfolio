@@ -7,6 +7,7 @@
 
 $primary-color: #86c232;
 $second-color: #6b6e70;
+$second-color-bright: #b9b9b9;
 $bg-color: #222629;
 $fire-color: #ff652f;
 $sun-color: #ffe400;
@@ -326,10 +327,18 @@ body {
         transform: translate(-25px, -50%);
       }
     }
+
     p {
       max-width: 500px;
-      margin-bottom: 100px;
       color: #ffffffab;
+    }
+
+    &__buttons {
+      margin-bottom: 100px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 80%;
     }
   }
 }
@@ -383,7 +392,7 @@ body {
           position: absolute;
           width: 10%;
           height: 3px;
-          background-color: green;
+          background-color: $primary-color;
           top: 40%;
           left: 50%;
           transform: translateX(-50%);
@@ -445,6 +454,19 @@ body {
     flex-direction: column;
     padding: 20px;
     margin-right: 40px !important;
+
+    > h2 {
+      font-weight: 600;
+      letter-spacing: 1px;
+      font-variant: all-small-caps;
+      font-size: 2.1rem;
+      line-height: 2.5rem;
+    }
+
+    span,
+    p {
+      text-align: justify;
+    }
   }
 
   .memory-open {
@@ -477,7 +499,7 @@ body {
         position: absolute;
         width: 10%;
         height: 3px;
-        background-color: green;
+        background-color: $primary-color;
         left: 50%;
         transform: translateX(-50%);
         bottom: -10px;
@@ -552,18 +574,37 @@ body {
     }
   }
 
+  // Colors
+  $bg-color: hsl(256, 33, 10);
+  $dot-color: hsl(256, 33, 70);
+
+  // Dimensions
+  $dot-size: 1px;
+  $dot-space: 33px;
+
   .project-open {
     display: flex;
     flex-wrap: wrap;
     width: 95%;
     height: 100;
     margin: auto;
+    background: linear-gradient(
+          90deg,
+          $bg-color ($dot-space - $dot-size),
+          transparent 1%
+        )
+        center,
+      linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
+      $dot-color;
+    background-size: $dot-space $dot-space;
 
     h3 {
       display: block;
       width: 100%;
       margin-bottom: 15px;
       text-align: center;
+      font-variant: all-small-caps;
+      color: $second-color-bright;
     }
 
     &__single {
@@ -574,6 +615,18 @@ body {
       margin: 10px auto 50px;
       flex-wrap: wrap;
       max-height: 450px;
+
+      h3::before {
+        content: "";
+        position: absolute;
+        width: 130px;
+        display: inline-block;
+        background-position: 0;
+        bottom: -4px;
+        left: 50%;
+        border-bottom: 2px dashed #ff652fba;
+        transform: translateX(-50%);
+      }
 
       .project-description {
         width: 50%;
@@ -595,6 +648,7 @@ body {
           display: inline-block;
           background-color: #2b3546e6;
           padding: 5px 20px;
+          text-align: start;
 
           &::before {
             content: "";
@@ -617,6 +671,7 @@ body {
             left: 10%;
             top: 13%;
             background-size: 30%;
+            text-align: center;
           }
         }
 
@@ -628,6 +683,7 @@ body {
           display: inline-block;
           background-color: #2b3546e6;
           padding: 5px 20px;
+          text-align: start;
 
           &::before {
             content: "";
@@ -638,6 +694,7 @@ body {
             right: -40%;
             top: 75%;
             background-size: 30%;
+            text-align: center;
           }
 
           &::after {
@@ -720,7 +777,7 @@ body {
         position: absolute;
         width: 10%;
         height: 3px;
-        background-color: green;
+        background-color: $primary-color;
         left: 50%;
         transform: translateX(-50%);
         bottom: -10px;
@@ -752,7 +809,7 @@ body {
         position: absolute;
         width: 10%;
         height: 3px;
-        background-color: green;
+        background-color: $primary-color;
         left: 50%;
         transform: translateX(-50%);
         bottom: -10px;
@@ -763,10 +820,15 @@ body {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: -30px;
+        bottom: -40px;
         color: rgb(133, 133, 133);
         font-size: 15px;
       }
+    }
+
+    p {
+      text-align: justify;
+      max-width: 700px;
     }
 
     &__whereabouts,
@@ -779,8 +841,8 @@ body {
       align-items: center;
 
       i {
-          font-size: 13px;
-        }
+        font-size: 13px;
+      }
 
       > svg {
         min-width: 200px;
@@ -831,13 +893,15 @@ body {
         > h2 {
           position: relative;
           margin-bottom: 15px;
+          font-variant: all-small-caps;
+          color: $second-color-bright;
 
           &::after {
             content: "";
             position: absolute;
             width: 10%;
             height: 3px;
-            background-color: green;
+            background-color: $primary-color;
             left: 0;
             bottom: -5px;
           }
@@ -905,6 +969,27 @@ body {
       background-size: 180%, 100%;
       fill: url(#gradient);
     }
+
+    .wave-text {
+      position: absolute;
+      bottom: 10%;
+      text-align: center;
+      width: 100%;
+      height: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding-bottom: 20px;
+
+      span {
+        display: block;
+
+        &:nth-last-of-type(1) {
+          padding-top: 20px;
+        }
+      }
+    }
   }
 
   .contact-form__wrapper {
@@ -967,7 +1052,7 @@ body {
           position: absolute;
           width: 15%;
           height: 3px;
-          background-color: green;
+          background-color: $primary-color;
           left: 50%;
           transform: translateX(-50%);
           bottom: -10px;

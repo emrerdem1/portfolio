@@ -3,7 +3,7 @@ import React from "react";
 export const ProjectOpen = () => {
   return (
     <div className="project-open">
-      <h2 className="col-12">Check out the project I have done so far here!</h2>
+      <h2 className="col-12">Check out the project I have done so far!</h2>
       <div className="col-11 project-open__single">
         <h3 className="col-12">MadLibs</h3>
         <div className="project-open__single--madlibs">

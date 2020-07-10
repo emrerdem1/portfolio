@@ -50,6 +50,10 @@ export const Wave = () => {
           className="shape-fill path3"
         ></path>
       </svg>
+      <div className="wave-text">
+        <span>I'm Emre Erdem.</span>
+        <span></span>
+      </div>
     </div>
   );
 };
