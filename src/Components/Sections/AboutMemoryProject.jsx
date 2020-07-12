@@ -41,7 +41,7 @@ export const AboutMemoryProject = () => {
             Want to know <span>a bit more</span> about me?
           </h2>
           <p className="about-greetings__text">
-            Here's the brief summary of who I am and what I've been doing!
+            The brief summary of who I am and what I've been doing!
           </p>
         </div>
         <div
