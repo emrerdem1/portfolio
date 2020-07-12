@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Subrayada&family=Muli&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,200&display=swap");
 
 $primary-color: #86c232;
 $second-color: #6b6e70;
@@ -18,6 +19,7 @@ $wave2: #cb2d6f;
 $wave3: #2d283e;
 $font-mont: "Montserrat Subrayada", sans-serif;
 $font-muli: "Muli", sans-serif;
+$font-second: "Poppins", sans-serif;
 $form-gradient: linear-gradient(
     138deg,
     rgba(22, 39, 191, 0.6664408744930037) 11%,
@@ -44,7 +46,7 @@ body {
   color: white;
   background-color: $bg-color;
   overflow-x: hidden;
-  font-family: $font-muli;
+  font-family: $font-second;
 }
 #root {
   width: 100vw;
@@ -63,6 +65,11 @@ body {
   box-shadow: 4px 3px 11px 0px rgba(0, 0, 0, 0.45);
   z-index: 100;
   background-color: $bg-color;
+
+  a[alt="resume"] {
+    position: absolute;
+    bottom: 0;
+  }
 
   .sidebar-item {
     width: 100%;
@@ -329,8 +336,9 @@ body {
     }
 
     p {
-      max-width: 500px;
+      max-width: 450px;
       color: #ffffffab;
+      letter-spacing: 0.3px;
     }
 
     &__buttons {
@@ -339,6 +347,8 @@ body {
       justify-content: space-around;
       align-items: center;
       width: 80%;
+      position: relative;
+      z-index: 15;
     }
   }
 }
@@ -386,6 +396,9 @@ body {
       &__title {
         min-height: 50px;
         width: 50vw;
+        font-weight: 500;
+        font-size: 1.9rem;
+        letter-spacing: 0.3px;
 
         &::before {
           content: "";
@@ -402,6 +415,9 @@ body {
       &__text {
         min-height: 50px;
         width: 50vw;
+        padding-top: 10px;
+        letter-spacing: 0.3px;
+        color: #b3b3b3;
       }
     }
 
@@ -457,9 +473,8 @@ body {
 
     > h2 {
       font-weight: 600;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       font-variant: all-small-caps;
-      font-size: 2.1rem;
       line-height: 2.5rem;
     }
 
@@ -484,7 +499,7 @@ body {
       #101010 25%,
       #292929 50%,
       #151515 75%,
-      #000000b0 100%
+      #000000 100%
     );
 
     h2 {
@@ -612,7 +627,7 @@ body {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      margin: 10px auto 50px;
+      margin: 10px auto 130px;
       flex-wrap: wrap;
       max-height: 450px;
 
@@ -644,11 +659,17 @@ body {
         .svg-description {
           width: 50%;
           margin-left: 53%;
-          margin-top: 100px;
+          margin-top: 90px;
           display: inline-block;
           background-color: #2b3546e6;
           padding: 5px 20px;
           text-align: start;
+          border-radius: 5px;
+          padding: 15px 20px;
+          color: #cacaca;
+          line-height: 25px;
+          font-weight: 300;
+          letter-spacing: 0.5px;
 
           &::before {
             content: "";
@@ -657,7 +678,7 @@ body {
             position: absolute;
             background: url("./project-detail.svg") no-repeat;
             right: -40%;
-            top: 20%;
+            top: 18%;
             background-size: 30%;
           }
 
@@ -669,9 +690,10 @@ body {
             width: 100%;
             height: 100%;
             left: 10%;
-            top: 13%;
+            top: 12%;
             background-size: 30%;
             text-align: center;
+            font-weight: 400;
           }
         }
 
@@ -679,11 +701,17 @@ body {
           width: 50%;
           margin-left: 53%;
           text-align: start;
-          margin-top: 70px;
+          margin-top: 73px;
           display: inline-block;
           background-color: #2b3546e6;
           padding: 5px 20px;
           text-align: start;
+          border-radius: 5px;
+          padding: 15px 20px;
+          color: #cacaca;
+          line-height: 25px;
+          font-weight: 300;
+          letter-spacing: 0.5px;
 
           &::before {
             content: "";
@@ -692,7 +720,7 @@ body {
             position: absolute;
             background: url("./project-tools.svg") no-repeat;
             right: -40%;
-            top: 75%;
+            top: 89%;
             background-size: 30%;
             text-align: center;
           }
@@ -705,9 +733,10 @@ body {
             width: 100%;
             height: 100%;
             left: 10%;
-            top: 69%;
+            top: 83%;
             background-size: 30%;
             text-align: center;
+            font-weight: 400;
           }
         }
 
@@ -797,6 +826,14 @@ body {
     margin: auto;
     width: 95%;
 
+    p {
+      background-color: #e4e4e4;
+      letter-spacing: 0.3px;
+      color: #1b1919;
+      padding: 15px 30px;
+      border-radius: 5px;
+    }
+
     > h2 {
       width: 100%;
       text-align: center;
@@ -820,7 +857,7 @@ body {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: -40px;
+        bottom: -42px;
         color: rgb(133, 133, 133);
         font-size: 15px;
       }
@@ -829,6 +866,7 @@ body {
     p {
       text-align: justify;
       max-width: 700px;
+      letter-spacing: 0.3px;
     }
 
     &__whereabouts,
@@ -842,6 +880,10 @@ body {
 
       i {
         font-size: 13px;
+        display: block;
+        padding-bottom: 10px;
+        font-weight: 600;
+        color: #464646eb;
       }
 
       > svg {
@@ -895,6 +937,7 @@ body {
           margin-bottom: 15px;
           font-variant: all-small-caps;
           color: $second-color-bright;
+          letter-spacing: 1px;
 
           &::after {
             content: "";
@@ -1008,7 +1051,7 @@ body {
       z-index: 11;
       display: block;
       width: 100vw;
-      height: 110vh;
+      height: 120vh;
       background-image: linear-gradient(
           77deg,
           rgba(32, 33, 33, 0.76) 60%,
@@ -1034,6 +1077,12 @@ body {
       flex-direction: column;
       z-index: 12;
 
+      p {
+        letter-spacing: 0.3px;
+        color: #b3b3b3;
+        padding-top: 10px;
+      }
+
       &::after {
         content: "";
         height: 300px;
@@ -1046,6 +1095,7 @@ body {
       &__title {
         position: relative;
         margin-bottom: 15px;
+        letter-spacing: 0.3px;
 
         &::after {
           content: "";
@@ -1119,6 +1169,101 @@ body {
           opacity: 0.4;
           font-style: italic;
         }
+      }
+    }
+  }
+}
+
+#social-links {
+  min-height: 150px;
+  position: relative;
+  z-index: 50;
+  border-top: 2px dashed #2d2c2c;
+  position: relative;
+  margin-top: 80px;
+  background-image: linear-gradient(
+      77deg,
+      rgba(32, 33, 33, 0.76) 60%,
+      rgba(39, 37, 37, 0.54) 74%
+    ),
+    linear-gradient(145deg, #232425 0%, #060606 0%),
+    linear-gradient(103deg, rgba(35, 37, 37, 0) 13%, rgba(0, 0, 0, 0.98) 160%),
+    linear-gradient(
+      151deg,
+      rgba(38, 38, 41, 0.53) 21%,
+      rgba(19, 19, 19, 0.35) 76%
+    );
+
+  div {
+    width: 100%;
+    position: relative;
+    height: 150px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+      background: url("./footer.svg") no-repeat;
+      width: 200px;
+      height: 100%;
+      position: absolute;
+      right: 30px;
+      background-size: 100% 102%;
+      top: -10px;
+    }
+
+    a {
+      margin-right: 80px;
+      font-size: 50px;
+      color: #6c63ff;
+    }
+
+    a[alt="github"] {
+      position: relative;
+      display: inline-block;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background: url("./flower3.svg") no-repeat;
+        width: 50px;
+        height: 30px;
+        z-index: -1;
+        bottom: 15px;
+        right: -40px;
+      }
+    }
+
+    a[alt="linkedin"] {
+      position: relative;
+      display: inline-block;
+
+      &::before {
+        content: "";
+
+        position: absolute;
+        background: url("./flower2.svg") no-repeat;
+        width: 50px;
+        height: 60px;
+        z-index: -1;
+        left: -10px;
+        bottom: 10px;
+      }
+    }
+
+    a[alt="instagram"] {
+      position: relative;
+      display: inline-block;
+
+      &::before {
+        content: "";
+        position: absolute;
+        background: url("./flower.svg") no-repeat;
+        width: 50px;
+        height: 60px;
+        z-index: -1;
+        left: 20px;
       }
     }
   }

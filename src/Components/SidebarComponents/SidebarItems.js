@@ -51,7 +51,22 @@ export const SidebarItems = ({ isOpen, setOpen }) => {
         </div>
       </Link>
 
-      <Link to="" spy={true} smooth={true} offset={50} duration={500}>
+      <Link
+        to="social-links"
+        spy={true}
+        smooth={true}
+        offset={0}
+        duration={500}
+      >
+        <div className="col-2 d-flex align-items-center sidebar-social">
+          <div className="sidebar-item" title="Social Links">
+            <i class="fas fa-hashtag">
+              {isOpen && <span className="sidebar-span">Social Links</span>}
+            </i>
+          </div>
+        </div>
+      </Link>
+      <a href="#" alt="resume" target="_blank">
         <div
           className="col-2 d-flex align-items-center sidebar-contact"
           style={{ margin: "auto 0 20px 0" }}
@@ -62,7 +77,7 @@ export const SidebarItems = ({ isOpen, setOpen }) => {
             </i>
           </div>
         </div>
-      </Link>
+      </a>
     </>
   );
 };

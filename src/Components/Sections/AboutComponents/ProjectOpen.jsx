@@ -9,10 +9,10 @@ export const ProjectOpen = () => {
         <div className="project-open__single--madlibs">
           <div className="project-open__single--madlibs-svg">
             <span className="svg-description">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-              sed consectetur sit praesentium explicabo ad ab iste numquam eius
-              maxime sequi voluptas, dignissimos omnis suscipit accusamus
-              perspiciatis ducimus adipisci maiores.
+              Write out a full story that is processed into a format that will
+              allow the one to keep track of "blanks". Whenever the user updates
+              a blank in the edit view, it should update the preview any time a
+              new character is typed.
             </span>
             <span className="svg-tools">HTML, CSS, Vanilla JS</span>
           </div>
@@ -21,17 +21,17 @@ export const ProjectOpen = () => {
             <a href="#" title="Repo"></a>
           </div>
         </div>
-        <span className="project-description"></span>
       </div>
       <div className="col-11 project-open__single">
         <h3 className="col-12">Movie</h3>
         <div className="project-open__single--movie">
           <div className="project-open__single--movie-svg">
             <span className="svg-description">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
-              reiciendis eaque rem. Repellat quas aliquam error fugit a
-              recusandae beatae libero, id, et ad excepturi? Autem quia aut
-              minus eos!
+              Do the styling of Single Movie Page that is fetched from The Movie
+              DB API and build functionalities to move from Movie Page to Actor
+              Page with necessary fields getting filled. Do the search and
+              sorting based on names, get recommendation and trailer section by
+              using API.
             </span>
             <span className="svg-tools">
               HTML, CSS, Bootstrap, Postman, Vanilla JS
@@ -42,17 +42,16 @@ export const ProjectOpen = () => {
             <a href="#" title="Repo"></a>
           </div>
         </div>
-        <span className="project-description"></span>
       </div>
       <div className="col-11 project-open__single">
         <h3 className="col-12">Board</h3>
         <div className="project-open__single--board">
           <div className="project-open__single--board-svg">
             <span className="svg-description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos nemo
-              officia magnam dolor tenetur rerum earum repellendus hic repellat
-              fugiat nihil, corrupti quasi aut id praesentium reprehenderit rem
-              architecto laborum.
+              Build a ToDo Board that users can schedule their tasks. Users can
+              create custom boards with unlimited amount of tasks within, move
+              the position of boards freely, change tasks status by clicking and
+              sorting boards to one's heart's content.
             </span>
             <span className="svg-tools">
               HTML, CSS, React-Bootstrap, Material UI, ReactJS, Firebase
@@ -63,7 +62,6 @@ export const ProjectOpen = () => {
             <a href="#" title="Repo"></a>
           </div>
         </div>
-        <span className="project-description"></span>
       </div>
     </div>
   );

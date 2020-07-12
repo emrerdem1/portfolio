@@ -8,8 +8,8 @@ export const IntroSection = () => {
         <h2>Hi there! I'm Emre!</h2>
         <p>
           A <span className="webdeveloper">web developer</span> who is fond of
-          coding, lifelong learning and petting stray cats! I do build nice and
-          useful websites and applications!
+          coding, lifelong learning and petting stray cats! I do build aesthetic
+          and useful websites and applications!
         </p>
         <div className="intro-box__buttons">
           <a href="#" title="Learn More">

@@ -2,6 +2,7 @@ import React from "react";
 import { IntroSection } from "./Sections/IntroSection";
 import { Contact } from "./Sections/Contact";
 import { AboutMemoryProject } from "./Sections/AboutMemoryProject";
+import { SocialLinks } from "./Sections/SocialLinks";
 
 export const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ export const HomePage = () => {
       <IntroSection />
       <AboutMemoryProject />
       <Contact />
+      <SocialLinks />
     </div>
   );
 };

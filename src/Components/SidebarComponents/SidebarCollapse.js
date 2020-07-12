@@ -1,17 +1,21 @@
 import React from "react";
-import { Link } from "react-scroll";
 
 export const SidebarCollapse = ({ isOpen, setOpen }) => {
+  const handleCollapse = (e) => {
+    e.preventDefault();
+    return setOpen(!isOpen);
+  };
+
   return (
-    <Link to="intro-section" spy={true} smooth={true} offset={0} duration={500}>
+    <a href="" alt="collapse">
       <div
         className="col-2 d-flex align-items-center  sidebar-collapse-section"
-        onClick={() => setOpen(!isOpen)}
+        onClick={handleCollapse}
       >
         <div className="sidebar-item collapse-text" title="Collapse">
           <i className="fas fa-angle-double-up"></i>
         </div>
       </div>
-    </Link>
+    </a>
   );
 };
