@@ -59,14 +59,18 @@ export const SidebarItems = ({ isOpen, setOpen }) => {
         duration={500}
       >
         <div className="col-2 d-flex align-items-center sidebar-social">
-          <div className="sidebar-item" title="Social Links">
+          <div className="sidebar-item" title="Social Contacts">
             <i class="fas fa-hashtag">
-              {isOpen && <span className="sidebar-span">Social Links</span>}
+              {isOpen && <span className="sidebar-span">Social Contacts</span>}
             </i>
           </div>
         </div>
       </Link>
-      <a href="#" alt="resume" target="_blank">
+      <a
+        href="https://drive.google.com/file/d/1XJtv2TdBuCnwXA7IUpwt2CSqRIncnU2Z/view?usp=sharing"
+        alt="resume"
+        target="_blank"
+      >
         <div
           className="col-2 d-flex align-items-center sidebar-contact"
           style={{ margin: "auto 0 20px 0" }}
