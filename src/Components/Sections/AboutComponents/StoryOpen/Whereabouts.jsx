@@ -10,8 +10,8 @@ export const Whereabouts = () => {
       <div>
         <h2>Where I am from?</h2>
         <p>
-          I born in a little town of <span>Cappadocia</span>, Turkey where my
-          family has been running a cute{" "}
+          I was born in a little town of <span>Cappadocia</span>, Turkey where
+          my family has been running a cute{" "}
           <a href="https://en.wikipedia.org/wiki/Pottery">pottery</a> workshop
           for generations. We basically craft the clay that we dug from the
           generous earth to shape into vessels and specific objects. I'm also an
