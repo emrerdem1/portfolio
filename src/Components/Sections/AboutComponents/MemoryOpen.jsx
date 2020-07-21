@@ -26,43 +26,43 @@ export const MemoryOpen = () => {
       <h2>Memories I will forever treasure...</h2>
       <Slider {...settings}>
         <div className="img-frame">
-          <img src="" alt="" style={{ backgroundColor: "green" }} />
+          <img src="" alt="" style={{ backgroundColor: "#008000b5" }} />
           <span>1</span>
         </div>
         <div className="img-frame">
-          <img src="" alt="" style={{ backgroundColor: "blue" }} />
+          <img src="" alt="" style={{ backgroundColor: "#6464c5" }} />
           <span>2</span>
         </div>
         <div className="img-frame">
-          <img src="" alt="" style={{ backgroundColor: "red" }} />
+          <img src="" alt="" style={{ backgroundColor: "#da3a3a" }} />
           <span>3</span>
         </div>
         <div className="img-frame">
-          <img src="" alt="" style={{ backgroundColor: "black" }} />
+          <img src="" alt="" style={{ backgroundColor: "#1b1919" }} />
           <span>4</span>
         </div>
         <div className="img-frame">
-          <img src="" alt="" style={{ backgroundColor: "gray" }} />
+          <img src="" alt="" style={{ backgroundColor: "#948e8e" }} />
           <span>5</span>
         </div>
         <div className="img-frame">
-          <img src="" alt="" style={{ backgroundColor: "yellow" }} />
+          <img src="" alt="" style={{ backgroundColor: "#b7b746" }} />
           <span>7</span>
         </div>
         <div className="img-frame">
-          <img src="" alt="" style={{ backgroundColor: "red" }} />
+          <img src="" alt="" style={{ backgroundColor: "#da3a3a" }} />
           <span>8</span>
         </div>
         <div className="img-frame">
-          <img src="" alt="" style={{ backgroundColor: "black" }} />
+          <img src="" alt="" style={{ backgroundColor: "#1b1919" }} />
           <span>9</span>
         </div>
         <div className="img-frame">
-          <img src="" alt="" style={{ backgroundColor: "gray" }} />
+          <img src="" alt="" style={{ backgroundColor: "#948e8e" }} />
           <span>10</span>
         </div>
         <div className="img-frame">
-          <img src="" alt="" style={{ backgroundColor: "yellow" }} />
+          <img src="" alt="" style={{ backgroundColor: "#b7b746" }} />
           <span>11</span>
         </div>
       </Slider>
