@@ -51,7 +51,7 @@ export const Wave = () => {
         ></path>
       </svg>
       <div className="wave-text">
-        <span>I'm Emre Erdem.</span>
+        <span></span>
         <span></span>
       </div>
     </div>
