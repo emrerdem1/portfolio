@@ -71,7 +71,7 @@ export const ContactForm = () => {
           <button
             type="submit"
             value="Submit"
-            className="btn btn-outline-info"
+            className="contact-button"
             onSubmit={sendEmail}
           >
             Send
