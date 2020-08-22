@@ -1,0 +1,35 @@
+$primary-color: #86c232;
+$second-color: #6b6e70;
+$second-color-bright: #b9b9b9;
+$bg-color: #222629;
+$fire-color: #ff652f;
+$sun-color: #ffe400;
+$avatar-bg: linear-gradient(to right, #a95637, #db6b42c9, #de6f48);
+$purple-color: linear-gradient(to right, #2a2a61, #5048a2, #7064de);
+$wave1: #cccccc;
+$wave2: #cb2d6f;
+$wave3: #2d283e;
+$font-mont: "Montserrat Subrayada", sans-serif;
+$font-muli: "Muli", sans-serif;
+$font-second: "Poppins", sans-serif;
+$form-gradient: linear-gradient(
+    138deg,
+    rgba(22, 39, 191, 0.6664408744930037) 11%,
+    rgba(252, 175, 156, 0.5) 62%
+  ),
+  linear-gradient(
+    52deg,
+    rgba(69, 45, 153, 0.5828433873727739) 53%,
+    rgba(249, 147, 169, 0.5) 151%
+  ),
+  linear-gradient(
+    93deg,
+    rgba(8, 115, 145, 0.14069970552778965) 47%,
+    rgba(252, 189, 192, 0.5) 7%
+  ),
+  linear-gradient(
+    155deg,
+    rgba(88, 178, 201, 0.4421353177274743) 56%,
+    rgba(255, 178, 175, 0.5) 35%
+  );
+$form-blendmode: hue, normal, overlay, overlay;

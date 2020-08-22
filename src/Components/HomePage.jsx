@@ -1,7 +1,7 @@
 import React from "react";
-import { IntroSection } from "./Sections/IntroSection";
-import { Contact } from "./Sections/Contact";
-import { AboutMemoryProject } from "./Sections/AboutMemoryProject";
+import { IntroSection } from "./Sections/intro/IntroSection";
+import { Contact } from "./Sections/contact/Contact";
+import { AboutMemoryProject } from "./Sections/about/AboutMemoryProject";
 import { SocialLinks } from "./Sections/SocialLinks";
 
 export const HomePage = () => {

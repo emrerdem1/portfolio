@@ -17,8 +17,8 @@ export const ProjectOpen = () => {
             <span className="svg-tools">HTML, CSS, Vanilla JS</span>
           </div>
           <div className="project-open__single--madlibs-anchor">
-            <a href="https://madlibs-project.netlify.app/" title="Demo" target="_blank"></a>
-            <a href="https://github.com/emrerdem1/MadLibs-Project" title="Repo" target="_blank"></a>
+            <a href="#" title="Demo"></a>
+            <a href="#" title="Repo"></a>
           </div>
         </div>
       </div>
@@ -38,8 +38,8 @@ export const ProjectOpen = () => {
             </span>
           </div>
           <div className="project-open__single--movie-anchor">
-            <a href="#" title="Demo" target="_blank"></a>
-            <a href="https://github.com/emrerdem1/bootcamp-istanbul-2020mar/tree/master/movie-project/Maher-Emre" title="Repo" target="_blank"></a>
+            <a href="#" title="Demo"></a>
+            <a href="#" title="Repo"></a>
           </div>
         </div>
       </div>
@@ -58,8 +58,8 @@ export const ProjectOpen = () => {
             </span>
           </div>
           <div className="project-open__single--board-anchor">
-            <a href="https://todo-board-project.netlify.app/" title="Demo" target="_blank"></a>
-            <a href="https://github.com/emrerdem1/ToDo-BoardProject" title="Repo" target="_blank"></a>
+            <a href="#" title="Demo"></a>
+            <a href="#" title="Repo"></a>
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ export const SidebarCollapse = ({ isOpen, setOpen }) => {
   };
 
   return (
-    <a href="" alt="collapse">
+    <a href="#" alt="collapse">
       <div
         className="col-2 d-flex align-items-center  sidebar-collapse-section"
         onClick={handleCollapse}
