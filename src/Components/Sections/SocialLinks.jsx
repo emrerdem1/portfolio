@@ -9,18 +9,25 @@ export const SocialLinks = () => {
           href="https://www.linkedin.com/in/emrerdem94/"
           alt="linkedin"
           target="_blank"
+          rel="noopener noreferrer"
         >
-          <i class="fab fa-linkedin"></i>
+          <i className="fab fa-linkedin"></i>
         </a>
-        <a href="https://github.com/emrerdem1" alt="github" target="_blank">
-          <i class="fab fa-github-square"></i>
+        <a
+          href="https://github.com/emrerdem1"
+          alt="github"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i className="fab fa-github-square"></i>
         </a>
         <a
           href="https://www.instagram.com/herecomesemre/"
           alt="instagram"
           target="_blank"
+          rel="noopener noreferrer"
         >
-          <i class="fab fa-instagram-square"></i>
+          <i className="fab fa-instagram-square"></i>
         </a>
       </div>
     </div>

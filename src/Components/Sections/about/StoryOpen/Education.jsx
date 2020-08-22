@@ -10,10 +10,11 @@ export const Education = () => {
           <i>
             (You can download{" "}
             <span>
-              <a href="" title="CV"  className="outer-links" target="_blank">
+              <a href="" title="CV">
                 Resume
               </a>
-            </span>{" "}for the summary.)
+            </span>{" "}
+            on the sidebar for the summary.)
           </i>
           I finished my elementary, junior and highschool education in my
           hometown, moving to a different state to get my bachalor's degree in{" "}
@@ -23,18 +24,18 @@ export const Education = () => {
         </p>
         <p>
           After my graduation in MIS, I am blessed to participate in a Front-End
-          Web Developer Bootcamp in{" "}
-          <a href="https://www.re-coded.com/" className="outer-links"  target="_blank">Re:Coded</a>! I got to learn many
+          Web Developer Bootcamp in
+          <a href="https://www.re-coded.com/"> Re:Coded</a>! I got to learn many
           new approaches and get accustomed to web developer tools such as{" "}
           <span>
             Vanilla JS, React, TypeScript, Firebase by building real web
             applications and more
           </span>{" "}
           with the help of caring instructors Re:Coded Team assigned to us and
-          curriculum of{" "}
-          <a href="https://flatironschool.com/" className="outer-links" target="_blank">Flatiron Academy</a>! I, now,
+          curriculum of
+          <a href="https://flatironschool.com/"> Flatiron Academy</a>! I, now,
           have gained interest in Back-End side as well and I strive to be
-          better coder than yesterday me!
+          better coder from yesterday!
         </p>
       </div>
     </div>

@@ -1,9 +1,5 @@
 import React, { useReducer } from "react";
-import {
-  StoryOpen,
-  MemoryOpen,
-  ProjectOpen,
-} from "./AboutComponents/export_about";
+import { StoryOpen, MemoryOpen, ProjectOpen } from "./export_about";
 
 function reducer(state, action) {
   switch (action.type) {
