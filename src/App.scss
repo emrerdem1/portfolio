@@ -303,7 +303,7 @@ body {
     padding-left: 100px;
     color: white;
     height: 400px;
-    padding-top: 100px;
+    margin-top: 60px;
 
     &__header {
       display: flex;
@@ -361,10 +361,11 @@ body {
         position: relative;
         width: 100%;
         height: 90px;
+        padding-left: 100px;
 
         h2 {
           position: absolute !important;
-          font-size: 65px;
+          font-size: 3.6rem;
           font-variant: all-petite-caps;
           z-index: 1;
           font-weight: 400;
@@ -1426,86 +1427,132 @@ body {
   }
 }
 
+@include media(desktop) {
+  #root #homepage {
+    #intro-section {
+      height: 450px;
+
+      .intro-box,
+      .avatar-container {
+        height: 330px;
+
+        .avatar {
+          width: 260px;
+          height: 260px;
+        }
+      }
+
+      .intro-box {
+        .juniorName {
+          font-size: 3.2rem;
+        }
+
+        &__header--double {
+          padding-left: 50px;
+        }
+      }
+    }
+  }
+}
+
 @include media(tablet) {
   #root #homepage {
-    .intro-box {
-      padding-left: 60px;
+    #intro-section {
+      .intro-box {
+        padding-left: 60px;
 
-      .intro-box__header--double {
-        h2 {
-          font-size: 50px;
+        .juniorName {
+          font-size: 2.8rem;
+        }
+
+        .introText {
+          font-size: 0.9rem;
+        }
+
+        .intro-box__buttons {
+          width: 100%;
+          justify-content: space-around;
+
+          .view-more,
+          .view-resume {
+            margin: 0;
+          }
         }
       }
 
-      .intro-box__buttons {
-        width: 100%;
-        justify-content: space-around;
-
-        .view-more,
-        .view-resume {
-          margin: 0;
-        }
+      .avatar {
+        width: 270px;
+        height: 270px;
       }
-    }
 
-    .avatar {
-      width: 270px;
-      height: 270px;
-    }
+      .introSeperator {
+        display: none;
+      }
 
-    .introSeperator {
-      display: none;
-    }
-
-    #about-section::before {
-      height: 1300px;
+      #about-section::before {
+        height: 1300px;
+      }
     }
   }
 }
 
 @include media(tablet-sm) {
   #root #homepage {
-    .intro-box {
-      padding-left: 50px;
-      padding-top: 70px;
+    #intro-section {
+      .intro-box {
+        padding: 0 0 0 30px;
 
-      &__header {
-        padding-left: 20px;
-        padding-bottom: 10px;
-        min-width: 246px;
-      }
+        &__header {
+          padding-left: 20px;
+          padding-bottom: 10px;
+          min-width: 246px;
 
-      .introText {
-        font-size: 15px;
-        margin-left: -10px;
-        padding-right: 10px;
-      }
+          &--double {
+            padding-left: 0;
+          }
+        }
 
-      .junior-dev {
-        margin-left: -15px;
-      }
+        .introText {
+          font-size: 15px;
+          margin-left: -10px;
+          padding-right: 10px;
+        }
 
-      .view-resume,
-      .view-more {
-        min-width: 100px;
-        margin-right: 10px !important;
+        .junior-dev {
+          margin-left: -15px;
+        }
 
-        a {
+        .view-more {
+          min-width: 100px;
+          margin-right: 10px !important;
+
+          a {
+            font-size: 12px;
+            text-align: center;
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
+
+        .view-resume a {
           font-size: 12px;
           text-align: center;
-          padding: 10px 0;
+          padding-left: 0;
+          padding-right: 0;
         }
       }
-    }
 
-    .avatar {
-      width: 220px;
-      height: 220px;
-      left: 40%;
+      .avatar-container {
+        .avatar {
+          width: 220px;
+          height: 220px;
+          left: 50%;
 
-      &::before {
-        width: 200%;
-        height: 220%;
+          &::before {
+            width: 200%;
+            height: 220%;
+          }
+        }
       }
     }
 
