@@ -8,7 +8,7 @@ export const HomePage = () => {
   return (
     <div
       id="homepage"
-      className="col-xl-11 col-lg-11 col-md-10 offset-xl-1 offset-lg-1 offset-2"
+      className="col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-12"
     >
       <IntroSection />
       <AboutMemoryProject />

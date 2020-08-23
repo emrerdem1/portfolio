@@ -41,19 +41,19 @@ export const AboutMemoryProject = () => {
           </p>
         </div>
         <div
-          className="col mx-4 main-hall__icons"
+          className="col-xl-4 col-lg-4 col-md-5 col-sm-12 col-xs-10 main-hall__icons"
           onClick={() => invokeReducer("story")}
         >
           <svg className="main-hall__icons--story"></svg>
         </div>
         <div
-          className="col mx-4 main-hall__icons"
+          className="col-xl-4 col-lg-4 col-md-7 col-sm-12 col-xs-10 main-hall__icons projectIcon"
           onClick={() => invokeReducer("project")}
         >
           <svg className="main-hall__icons--project"></svg>
         </div>
         <div
-          className="col mx-4 main-hall__icons"
+          className="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-10 main-hall__icons"
           onClick={() => invokeReducer("memory")}
         >
           <svg className="main-hall__icons--memory"></svg>
