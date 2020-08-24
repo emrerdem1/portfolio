@@ -1193,10 +1193,14 @@ body {
       }
 
       &__img {
-        height: 300px;
+        background: url("./svg/contact.png") no-repeat;
+        height: 210px;
+        width: 300px;
         display: inline-block;
         position: relative;
         z-index: 12;
+        background-size: contain;
+        margin-top: 20px;
       }
 
       &__title {
@@ -1523,6 +1527,10 @@ body {
       }
     }
 
+    .contact-svg__img {
+      width: 115%;
+    }
+
     #social-links {
       justify-content: start;
       padding-left: 140px;
@@ -1618,7 +1626,8 @@ body {
       padding-top: 25px;
 
       &__img {
-        height: 200px;
+        width: 300px;
+        margin: 20px auto;
       }
     }
 
