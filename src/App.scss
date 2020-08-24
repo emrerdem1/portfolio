@@ -456,7 +456,7 @@ body {
   margin-left: 0;
   max-width: 100%;
   padding: 50px 30px 0;
-  margin-bottom: -50px;
+  margin-bottom: 50px;
 
   &::before {
     content: "";
@@ -566,13 +566,13 @@ body {
   .story-open,
   .memory-open,
   .project-open {
+    z-index: 0;
     position: relative;
     width: calc(100% - 15px);
     display: flex;
     border: 3px ridge #848b90;
     flex-direction: column;
     padding: 20px;
-    margin-right: 40px !important;
 
     > h2 {
       font-weight: 600;
@@ -591,7 +591,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 95%;
+    width: 100%;
     height: 100%;
     justify-content: center;
     margin: auto;
@@ -707,8 +707,8 @@ body {
   .project-open {
     display: flex;
     flex-wrap: wrap;
-    width: 95%;
-    height: 100;
+    width: 100%;
+    height: 100%;
     margin: auto;
     background: linear-gradient(
           90deg,
@@ -931,14 +931,28 @@ body {
       linear-gradient(164deg, rgb(39, 38, 38) 45%, #1a37a0de 32%);
     background-blend-mode: hard-light, color, screen, soft-light;
     margin: auto;
-    width: 95%;
+    width: 100%;
+    margin-top: -40px;
 
     p {
-      background-color: #e4e4e4;
       letter-spacing: 0.3px;
       color: #1b1919;
       padding: 15px 30px;
       border-radius: 5px;
+      width: 100%;
+      height: 100%;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: #e4e4e4;
+        z-index: -2;
+        left: 0;
+        top: 0;
+      }
     }
 
     > h2 {
@@ -997,23 +1011,23 @@ body {
         min-width: 200px;
         position: relative;
         display: block;
-        width: 25%;
+        width: 250px;
+        min-height: 230px;
       }
 
       &--svg1 {
         background: url("./svg/story/whence.png") no-repeat;
         top: 0;
         left: 0;
-        min-height: 250px;
-        width: 100%;
+        background-size: contain;
+        width: 200px;
+        min-height: 230px;
       }
 
       &--svg2 {
         background: url("./svg/story/story-education.png") no-repeat;
         top: 0;
         left: 0;
-        min-height: 250px;
-        width: 100%;
         background-size: contain;
       }
 
@@ -1021,8 +1035,6 @@ body {
         background: url("./svg/story/story-hobby.png") no-repeat;
         top: 0;
         left: 0;
-        min-height: 250px;
-        width: 100%;
         background-size: contain;
       }
 
@@ -1030,8 +1042,6 @@ body {
         background: url("./svg/story/story-goal.png") no-repeat;
         top: 0;
         left: 0;
-        min-height: 250px;
-        width: 100%;
         background-size: contain;
       }
 
@@ -1510,8 +1520,35 @@ body {
       }
     }
 
-    #about-section::before {
-      height: 1300px;
+    #about-section {
+      &::before {
+        height: 1300px;
+      }
+
+      .story-open {
+        > div {
+          flex-wrap: wrap;
+          position: relative;
+
+          div {
+            width: 100%;
+          }
+
+          svg {
+            position: absolute;
+            order: 1;
+            min-width: 100px;
+            width: 100px;
+            min-height: 100px;
+            height: 100px;
+            background-size: contain;
+            right: 20px;
+            left: auto;
+            opacity: 0.7;
+            z-index: 0;
+          }
+        }
+      }
     }
 
     .form-container {
@@ -1621,6 +1658,16 @@ body {
       .projectIcon {
         padding-left: 0 !important;
       }
+
+      .story-open {
+        p {
+          font-size: 0.85rem;
+        }
+
+        h2 {
+          font-size: 3vw;
+        }
+      }
     }
 
     .contact-svg {
@@ -1680,12 +1727,13 @@ body {
         }
 
         &__buttons {
-          justify-content: center;
+          justify-content: center !important;
         }
 
         &__header {
           width: 220px;
           min-width: auto;
+          justify-content: center;
 
           &--double {
             display: flex;
@@ -1730,6 +1778,22 @@ body {
         &__text {
           width: 70%;
           font-size: 0.85rem;
+        }
+      }
+
+      .story-open {
+        width: 100vw;
+        margin-left: -30px;
+        padding: 20px 10px;
+
+        p,
+        i {
+          font-size: 2.4vw;
+        }
+
+        h2,
+        h2::after {
+          font-size: 3.2vw;
         }
       }
     }
@@ -1813,6 +1877,24 @@ body {
         &--project {
           width: 250px;
           min-height: 200px;
+        }
+      }
+
+      .story-open {
+        margin-bottom: 150px;
+        margin-top: -100px;
+
+        p {
+          padding: 15px;
+        }
+
+        > div {
+          svg {
+            min-width: 80px;
+            min-height: 80px;
+            height: 80px;
+            width: 80px;
+          }
         }
       }
     }
