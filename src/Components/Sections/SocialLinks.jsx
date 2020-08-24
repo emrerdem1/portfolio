@@ -3,8 +3,8 @@ import React from "react";
 export const SocialLinks = () => {
   return (
     <div id="social-links">
-      <div>
-        <svg></svg>
+      <svg className="socialSectionSvg"></svg>
+      <div className="socialsWrapper">
         <a
           href="https://www.linkedin.com/in/emrerdem94/"
           alt="linkedin"

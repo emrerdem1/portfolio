@@ -242,12 +242,14 @@ body {
     justify-content: center;
     align-items: center;
   }
+
   .circle {
     width: 100px;
     height: 100px;
     stroke-width: 30;
     stroke: #fff;
   }
+
   > svg {
     width: 100%;
     display: block;
@@ -365,7 +367,7 @@ body {
 
         h2 {
           position: absolute !important;
-          font-size: 3.6rem;
+          font-size: 3.1rem;
           font-variant: all-petite-caps;
           z-index: 1;
           font-weight: 400;
@@ -400,10 +402,11 @@ body {
     }
 
     p {
-      max-width: 450px;
+      max-width: 400px;
       color: #ffffffab;
       letter-spacing: 0.3px;
       margin-top: 20px;
+      font-size: 0.9rem;
     }
 
     &__buttons {
@@ -549,7 +552,8 @@ body {
         background: url("./svg/projects/project.png") no-repeat;
         top: 0;
         left: 0;
-        min-height: 210px;
+        width: 320px;
+        min-height: 220px;
         background-size: contain;
       }
 
@@ -1141,12 +1145,13 @@ body {
   .contact-form__wrapper {
     width: 100%;
     position: relative;
-    height: 75vh;
+    min-height: 600px;
     margin-left: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
     max-width: 100%;
+    padding-right: 100px;
 
     &::before {
       content: "";
@@ -1155,7 +1160,7 @@ body {
       display: block;
       width: 100%;
       top: -80px;
-      height: 650px;
+      height: calc(100% + 100px);
       background-image: linear-gradient(
           77deg,
           rgba(32, 33, 33, 0.76) 60%,
@@ -1296,6 +1301,7 @@ body {
 }
 
 #social-links {
+  height: 170px;
   min-height: 150px;
   position: relative;
   z-index: 50;
@@ -1313,78 +1319,71 @@ body {
       rgba(38, 38, 41, 0.53) 21%,
       rgba(19, 19, 19, 0.35) 76%
     );
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  div {
-    width: 100%;
+  svg {
+    background: url("./svg/footer.svg") no-repeat;
+    width: 200px;
+    height: 90%;
+    position: absolute;
+    right: 30px;
+    background-size: 100% 102%;
+  }
+
+  a {
+    margin-right: 80px;
+    font-size: 50px;
+    color: #6c63ff;
+  }
+
+  a[alt="github"] {
     position: relative;
-    height: 150px;
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
 
-    svg {
-      background: url("./svg/footer.svg") no-repeat;
-      width: 200px;
-      height: 100%;
+    &::before {
+      content: "";
       position: absolute;
-      right: 30px;
-      background-size: 100% 102%;
-      top: -10px;
+      background: url("./svg/socials/flower3.svg") no-repeat;
+      width: 50px;
+      height: 30px;
+      z-index: -1;
+      bottom: 15px;
+      right: -40px;
     }
+  }
 
-    a {
-      margin-right: 80px;
-      font-size: 50px;
-      color: #6c63ff;
+  a[alt="linkedin"] {
+    position: relative;
+    display: inline-block;
+
+    &::before {
+      content: "";
+
+      position: absolute;
+      background: url("./svg/socials/flower2.svg") no-repeat;
+      width: 50px;
+      height: 60px;
+      z-index: -1;
+      left: -10px;
+      bottom: 10px;
     }
+  }
 
-    a[alt="github"] {
-      position: relative;
-      display: inline-block;
+  a[alt="instagram"] {
+    position: relative;
+    display: inline-block;
+    margin: 0;
 
-      &::before {
-        content: "";
-        position: absolute;
-        background: url("./svg/socials/flower3.svg") no-repeat;
-        width: 50px;
-        height: 30px;
-        z-index: -1;
-        bottom: 15px;
-        right: -40px;
-      }
-    }
-
-    a[alt="linkedin"] {
-      position: relative;
-      display: inline-block;
-
-      &::before {
-        content: "";
-
-        position: absolute;
-        background: url("./svg/socials/flower2.svg") no-repeat;
-        width: 50px;
-        height: 60px;
-        z-index: -1;
-        left: -10px;
-        bottom: 10px;
-      }
-    }
-
-    a[alt="instagram"] {
-      position: relative;
-      display: inline-block;
-
-      &::before {
-        content: "";
-        position: absolute;
-        background: url("./svg/socials/flower.svg") no-repeat;
-        width: 50px;
-        height: 60px;
-        z-index: -1;
-        left: 20px;
-      }
+    &::before {
+      content: "";
+      position: absolute;
+      background: url("./svg/socials/flower.svg") no-repeat;
+      width: 50px;
+      height: 60px;
+      z-index: -1;
+      left: 20px;
     }
   }
 }
@@ -1443,14 +1442,38 @@ body {
       }
 
       .intro-box {
+        .view-more,
+        .view-resume {
+          a {
+            text-align: center;
+            font-size: 12px;
+            padding: 0.4rem 0.3rem;
+          }
+        }
         .juniorName {
-          font-size: 3.2rem;
+          font-size: 2.6rem;
+        }
+
+        .junior-dev {
+          font-size: 1rem;
+        }
+
+        .introText {
+          font-size: 0.8rem;
         }
 
         &__header--double {
           padding-left: 50px;
         }
       }
+    }
+
+    #about-section .projectIcon {
+      padding-left: 60px !important;
+    }
+
+    .contact-svg__title {
+      font-size: 1.7rem;
     }
   }
 }
@@ -1460,14 +1483,6 @@ body {
     #intro-section {
       .intro-box {
         padding-left: 60px;
-
-        .juniorName {
-          font-size: 2.8rem;
-        }
-
-        .introText {
-          font-size: 0.9rem;
-        }
 
         .intro-box__buttons {
           width: 100%;
@@ -1488,9 +1503,32 @@ body {
       .introSeperator {
         display: none;
       }
+    }
 
-      #about-section::before {
-        height: 1300px;
+    #about-section::before {
+      height: 1300px;
+    }
+
+    .form-container {
+      margin-right: 70px;
+    }
+
+    .contact-svg {
+      &__title {
+        font-size: 1.5rem;
+      }
+
+      &__text {
+        font-size: 0.8rem;
+      }
+    }
+
+    #social-links {
+      justify-content: start;
+      padding-left: 140px;
+
+      .socialSectionSvg {
+        right: 0;
       }
     }
   }
@@ -1575,12 +1613,46 @@ body {
         padding-left: 0 !important;
       }
     }
+
+    .contact-svg {
+      padding-top: 25px;
+
+      &__img {
+        height: 200px;
+      }
+    }
+
+    .contact-header svg {
+      vertical-align: auto;
+    }
+
+    .form-container {
+      margin-right: 0;
+      margin-bottom: 40px;
+      max-width: 400px;
+    }
+
+    #social-links {
+      padding-left: 90px;
+
+      a {
+        margin-right: 50px;
+      }
+
+      .socialSectionSvg {
+        width: 150px;
+      }
+    }
   }
 }
 
 @include media(phone) {
   #root #homepage {
     width: 100%;
+
+    #social-links {
+      margin-bottom: 70px;
+    }
 
     #intro-section {
       height: 750px;
@@ -1600,11 +1672,21 @@ body {
         &__header {
           width: 220px;
           min-width: auto;
+
+          &--double {
+            display: flex;
+            justify-content: center;
+          }
+
+          .junior-dev {
+            margin: 0;
+          }
         }
 
         .introText {
           margin-top: 50px;
           text-align: center;
+          padding: 0;
         }
       }
 
@@ -1624,6 +1706,8 @@ body {
     }
 
     #about-section {
+      margin-top: -60px;
+
       .about-greetings {
         &__title {
           font-size: 4.3vw;
@@ -1633,6 +1717,28 @@ body {
           width: 70%;
           font-size: 0.85rem;
         }
+      }
+    }
+
+    .contact-form__wrapper {
+      padding: 0;
+    }
+
+    .form-container {
+      max-width: 85%;
+      font-size: 0.9rem;
+    }
+
+    #social-links {
+      justify-content: center;
+      padding: 0;
+
+      .socialSectionSvg {
+        display: none;
+      }
+
+      a[alt="instagram"] {
+        margin: 0;
       }
     }
   }
@@ -1673,6 +1779,50 @@ body {
     .sidebar-item .fab,
     .fas {
       font-size: 29px !important;
+    }
+  }
+}
+
+@include media(phone-sm) {
+  #root #homepage {
+    #about-section {
+      margin-top: -100px;
+      margin-bottom: -150px;
+
+      .main-hall__icons {
+        &--story,
+        &--memory {
+          width: 230px;
+          min-height: 200px;
+        }
+
+        &--project {
+          width: 250px;
+          min-height: 200px;
+        }
+      }
+    }
+
+    .form-container {
+      max-width: 300px;
+    }
+
+    .contact-button {
+      padding: 0.3rem 0.3rem;
+    }
+
+    .socialsWrapper {
+      a {
+        font-size: 40px;
+
+        &::before {
+          height: 50px;
+        }
+      }
+
+      a[alt="github"]::before {
+        height: 25px;
+      }
     }
   }
 }
