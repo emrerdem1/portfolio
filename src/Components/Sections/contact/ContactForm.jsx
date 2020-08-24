@@ -35,11 +35,8 @@ export const ContactForm = () => {
         <p className="contact-svg__text">
           I love making acquaintance with new people!
         </p>
-        <img
-          className="contact-svg__img"
-          src="../../../svg/contact.png"
-          alt="contact Emre"
-        />
+        <svg
+          className="contact-svg__img"></svg>
       </div>
       <div className="col-12 col-md-6 col-sm-12 form-container">
         <form>
