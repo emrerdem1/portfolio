@@ -1200,6 +1200,7 @@ body {
         position: relative;
         z-index: 12;
         background-size: contain;
+        margin: auto;
         margin-top: 20px;
       }
 
@@ -1676,6 +1677,10 @@ body {
         & > * {
           padding: 0;
           width: 80%;
+        }
+
+        &__buttons {
+          justify-content: center;
         }
 
         &__header {
