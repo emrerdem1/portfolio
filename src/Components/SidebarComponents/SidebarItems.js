@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-scroll";
+import { SidebarContext } from "../../App";
 
-export const SidebarItems = ({ isOpen, setOpen }) => {
+export const SidebarItems = () => {
+  const { isSidebarOpen } = useContext(SidebarContext);
+
   return (
     <>
       <Link
@@ -10,12 +13,13 @@ export const SidebarItems = ({ isOpen, setOpen }) => {
         smooth={true}
         offset={0}
         duration={500}
+        className="sidebarItemContainer"
       >
         <div className="col-2 d-flex align-items-center sidebar-entrance">
           <div className="sidebar-item" title="Entrance">
-            <i className="fab fa-fort-awesome-alt">
-              {isOpen && <span className="sidebar-span">Entrance</span>}
-            </i>{" "}
+            <i className="fab fa-fort-awesome-alt sidebarIcon">
+              {isSidebarOpen && <span className="sidebar-span">Entrance</span>}
+            </i>
           </div>
         </div>
       </Link>
@@ -23,13 +27,14 @@ export const SidebarItems = ({ isOpen, setOpen }) => {
         to="about-section"
         spy={true}
         smooth={true}
-        offset={0}
+        offset={-80}
         duration={500}
+        className="sidebarItemContainer"
       >
         <div className="col-2 d-flex align-items-center sidebar-mainhall">
           <div className="sidebar-item" title="Main Hall">
-            <i className="fas fa-mug-hot">
-              {isOpen && <span className="sidebar-span">Main Hall</span>}
+            <i className="fas fa-mug-hot sidebarIcon">
+              {isSidebarOpen && <span className="sidebar-span">Main Hall</span>}
             </i>
           </div>
         </div>
@@ -39,13 +44,16 @@ export const SidebarItems = ({ isOpen, setOpen }) => {
         to="contact-section"
         spy={true}
         smooth={true}
-        offset={0}
+        offset={180}
         duration={500}
+        className="sidebarItemContainer"
       >
         <div className="col-2 d-flex align-items-center sidebar-briefing">
           <div className="sidebar-item" title="Briefing Room">
-            <i className="fas fa-envelope">
-              {isOpen && <span className="sidebar-span">Briefing Room</span>}
+            <i className="fas fa-envelope sidebarIcon">
+              {isSidebarOpen && (
+                <span className="sidebar-span">Briefing Room</span>
+              )}
             </i>
           </div>
         </div>
@@ -57,11 +65,12 @@ export const SidebarItems = ({ isOpen, setOpen }) => {
         smooth={true}
         offset={0}
         duration={500}
+        className="sidebarItemContainer"
       >
         <div className="col-2 d-flex align-items-center sidebar-social">
-          <div className="sidebar-item" title="Social Contacts">
-            <i class="fas fa-hashtag">
-              {isOpen && <span className="sidebar-span">Social Contacts</span>}
+          <div className="sidebar-item" title="Socials">
+            <i className="fas fa-hashtag sidebarIcon">
+              {isSidebarOpen && <span className="sidebar-span">Socials</span>}
             </i>
           </div>
         </div>
@@ -70,14 +79,16 @@ export const SidebarItems = ({ isOpen, setOpen }) => {
         href="https://drive.google.com/file/d/1XJtv2TdBuCnwXA7IUpwt2CSqRIncnU2Z/view?usp=sharing"
         alt="resume"
         target="_blank"
+        rel="noopener noreferrer"
+        className="sidebarItemContainer"
       >
         <div
           className="col-2 d-flex align-items-center sidebar-contact"
           style={{ margin: "auto 0 20px 0" }}
         >
           <div className="sidebar-item" title="Resume">
-            <i className="fas fa-file-contract">
-              {isOpen && <span className="sidebar-span">CV</span>}
+            <i className="fas fa-file-contract sidebarIcon">
+              {isSidebarOpen && <span className="sidebar-span">CV</span>}
             </i>
           </div>
         </div>
