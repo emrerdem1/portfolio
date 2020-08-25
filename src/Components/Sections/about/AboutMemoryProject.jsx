@@ -28,7 +28,9 @@ export const AboutMemoryProject = () => {
 
   return (
     <div
-      className={`container ${story || memory || project ? "opened" : ""}`}
+      className={`container ${
+        story || project ? "opened" : memory ? "memoryOpenedClassName" : ""
+      }`}
       id="about-section"
     >
       <div className="row d-flex flex-wrap justify-content-center align-items-center mx-0">
@@ -53,19 +55,15 @@ export const AboutMemoryProject = () => {
           <svg className="main-hall__icons--project"></svg>
         </div>
         <div
-          className="col-xl-4 col-lg-3 col-md-12 col-sm-12 col-xs-10 main-hall__icons"
+          className={`col-xl-4 col-lg-3 col-md-12 col-sm-12 col-xs-10 main-hall__icons ${
+            memory ? "memoryOpened" : ""
+          }`}
           onClick={() => invokeReducer("memory")}
         >
-          <svg className="main-hall__icons--memory"></svg>
+          <svg className={`main-hall__icons--memory`}></svg>
         </div>
       </div>
-      {story ? (
-        <StoryOpen />
-      ) : memory ? (
-        <MemoryOpen />
-      ) : (
-        project && <ProjectOpen />
-      )}
+      {story ? <StoryOpen /> : project && <ProjectOpen />}
     </div>
   );
 };
