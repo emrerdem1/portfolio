@@ -23,7 +23,7 @@ export const Education = () => {
                 Resume
               </a>
             </span>{" "}
-            on the sidebar for the summary.)
+            for the summary.)
           </i>
           I finished my elementary, junior and highschool education in my
           hometown, moving to a different state to get my bachalor's degree in{" "}

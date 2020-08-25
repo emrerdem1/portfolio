@@ -530,7 +530,6 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-left: 40px !important;
     }
 
     .main-hall__icons {
@@ -836,6 +835,7 @@ body {
             bottom: -20px;
             left: 50%;
             transform: translateX(-50%);
+            z-index: 4;
 
             .anchorDemo,
             .anchorRepo {
@@ -952,6 +952,7 @@ body {
             width: 100%;
             height: 100%;
             background-size: contain !important;
+            z-index: 4;
           }
         }
 
@@ -1365,6 +1366,26 @@ body {
           }
         }
 
+        .contact-button {
+          display: inline-block;
+          padding: 0.5em 1em;
+          text-decoration: none;
+          border-radius: 4px;
+          color: #ffffffa6;
+          background-image: linear-gradient(45deg, #e4745a 0%, #f44336cc 100%);
+          box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.42);
+          border: none;
+          border-bottom: solid 3px #c58668;
+          font-size: 13px;
+          cursor: pointer;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0px 27px 6px -15px rgba(0, 0, 0, 0.28);
+          }
+        }
+
         ::placeholder {
           color: silver;
           opacity: 0.4;
@@ -1560,6 +1581,10 @@ body {
       top: 81%;
       bottom: auto;
     }
+
+    .projectIcon {
+      padding-left: 55px;
+    }
   }
 }
 
@@ -1592,7 +1617,7 @@ body {
 
     #about-section {
       &::before {
-        height: 1300px;
+        height: calc(100% + 500px);
       }
 
       .story-open {
@@ -1640,10 +1665,6 @@ body {
       }
     }
 
-    .contact-svg__img {
-      width: 115%;
-    }
-
     #contact-section {
       .contact-form__wrapper {
         padding-top: 50px;
@@ -1684,10 +1705,11 @@ body {
         justify-content: center;
 
         .svg-description::before {
-          background: url("./svg/projects/project-detail--mobile.svg") no-repeat;
+          background: url("./svg/projects/project-detail--mobilev2.svg")
+            no-repeat;
           background-size: contain;
-          height: 170px;
-          top: -175px;
+          height: 221px;
+          top: -225px;
           left: 0;
           z-index: -2;
         }
@@ -1919,6 +1941,7 @@ body {
 
     #about-section {
       margin-top: -60px;
+      margin-bottom: 0;
       padding: 30px 0;
 
       .about-greetings {
@@ -1999,6 +2022,14 @@ body {
     position: fixed;
     margin: 0;
 
+    .sidebar-collapse-section {
+      display: none !important;
+    }
+
+    .sidebar-span {
+      padding: 0;
+    }
+
     a[alt="resume"] {
       position: relative;
       width: auto;
@@ -2032,7 +2063,7 @@ body {
     #about-section {
       margin-top: -100px;
       margin-bottom: -150px;
-      padding: 0;
+      padding-top: 50px 0 50px;
 
       .project-open {
         margin-top: -70px;
@@ -2101,5 +2132,34 @@ body {
       font-size: 0.7rem;
       line-height: unset;
     }
+  }
+}
+
+.outer-links {
+  position: relative;
+  text-decoration: none !important;
+  z-index: 1;
+  color: #000000;
+
+  &:hover {
+    color: #000000;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 105%;
+    height: 15%;
+    background-image: linear-gradient(45deg, #e4745a 0%, #f44336cc 100%);
+    transform: translateX(-50%) rotate(-2deg);
+    transition: height 0.5s ease-out;
+    left: 50%;
+    bottom: 0;
+  }
+
+  &:hover::before {
+    height: 100%;
+    background-image: linear-gradient(45deg, #e4745a70 0%, #f44336b5 100%);
   }
 }
