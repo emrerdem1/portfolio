@@ -281,7 +281,7 @@ body {
       z-index: -1;
       width: 501px;
       height: 539px;
-      background: url(./avatar-emre-v2.png) no-repeat;
+      background: url("./svg/avatar-emre-v2.png") no-repeat;
       background-size: 50% 50%;
       transform: rotate(10deg) translate(10px, 49px);
     }
@@ -540,6 +540,7 @@ body {
         min-height: 250px;
         background-size: contain;
         position: relative;
+        width: 310px;
       }
 
       &--story {
@@ -548,6 +549,14 @@ body {
         left: 0;
         min-height: 250px;
         background-size: contain;
+      }
+
+      @include media(desktop) {
+        @media only screen and (min-width: 992px) {
+          &--story {
+            width: 290px;
+          }
+        }
       }
 
       &--project {
@@ -565,11 +574,16 @@ body {
       }
     }
 
+    .memoryIcon {
+      display: flex;
+      justify-content: center;
+    }
+
     .memoryOpened::after {
       content: "Coming soon...";
       position: absolute;
       display: block;
-      bottom: -25px;
+      bottom: -30px;
       left: 50%;
       transform: translateX(-50%);
       width: 160px;
@@ -738,193 +752,13 @@ body {
       $dot-color;
     background-size: $dot-space $dot-space;
 
-    h3 {
-      display: block;
-      width: 100%;
-      margin-bottom: 15px;
-      text-align: center;
-      font-variant: all-small-caps;
-      color: $second-color-bright;
-    }
-
-    &__single {
-      height: 350px;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      margin: 10px auto 130px;
-      flex-wrap: wrap;
-      max-height: 450px;
-
-      h3::before {
-        content: "";
-        position: absolute;
-        width: 130px;
-        display: inline-block;
-        background-position: 0;
-        bottom: -4px;
-        left: 50%;
-        border-bottom: 2px dashed #ff652fba;
-        transform: translateX(-50%);
-      }
-
-      .project-description {
-        width: 50%;
-        height: 100%;
-      }
-
-      &--madlibs,
-      &--movie,
-      &--board {
-        height: 90%;
-        min-width: 250px;
-        width: 100%;
-        text-align: center;
-
-        .svg-description {
-          width: 50%;
-          margin-left: 53%;
-          margin-top: 90px;
-          display: inline-block;
-          background-color: #2b3546e6;
-          padding: 5px 20px;
-          text-align: start;
-          border-radius: 5px;
-          padding: 15px 20px;
-          color: #cacaca;
-          line-height: 25px;
-          font-weight: 300;
-          letter-spacing: 0.5px;
-
-          &::before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            background: url("./svg/projects/project-detail.svg") no-repeat;
-            right: -40%;
-            top: 18%;
-            background-size: 30%;
-          }
-
-          &::after {
-            content: "Description";
-            color: #ffffffb5;
-            font-size: 20px;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 10%;
-            top: 12%;
-            background-size: 30%;
-            text-align: center;
-            font-weight: 400;
-          }
-        }
-
-        .svg-tools {
-          width: 50%;
-          margin-left: 53%;
-          text-align: start;
-          margin-top: 73px;
-          display: inline-block;
-          background-color: #2b3546e6;
-          padding: 5px 20px;
-          text-align: start;
-          border-radius: 5px;
-          padding: 15px 20px;
-          color: #cacaca;
-          line-height: 25px;
-          font-weight: 300;
-          letter-spacing: 0.5px;
-
-          &::before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            background: url("./svg/projects/project-tools.svg") no-repeat;
-            right: -40%;
-            top: 89%;
-            background-size: 30%;
-            text-align: center;
-          }
-
-          &::after {
-            content: "Tools";
-            color: #ffffffb5;
-            font-size: 20px;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 10%;
-            top: 83%;
-            background-size: 30%;
-            text-align: center;
-            font-weight: 400;
-          }
-        }
-
-        &-anchor {
-          width: 20%;
-          margin: 10px auto 0 150px;
-          height: 35px;
-          display: flex;
-          justify-content: space-around;
-          align-items: center;
-          position: relative;
-          z-index: 10;
-
-          a[title="Demo"] {
-            width: 50px;
-            height: 100%;
-            background: url("./svg/projects/github-demo.svg") no-repeat;
-          }
-
-          a[title="Repo"] {
-            width: 50px;
-            height: 100%;
-            background: url("./svg/projects/github-repo.svg") no-repeat;
-          }
-        }
-      }
-
-      &--madlibs-svg {
-        width: 100%;
-        height: 100%;
-        background: url("./svg/projects/madlibs.svg") no-repeat;
-        display: block;
-        background-size: 50%;
-        position: relative;
-      }
-
-      &--movie-svg {
-        width: 100%;
-        height: 100%;
-        background: url("./svg/projects/movie.png") no-repeat;
-        display: block;
-        background-size: 100%;
-        position: relative;
-        background-size: 50%;
-      }
-
-      &--board-svg {
-        width: 100%;
-        height: 100%;
-        background: url("./svg/projects/board.svg") no-repeat;
-        display: block;
-        background-size: 100%;
-        position: relative;
-        background-size: 50%;
-      }
-    }
-
-    h2 {
+    .projectGeneralTitle {
       width: 100%;
       text-align: center;
       margin-top: 10px;
       margin-bottom: 40px;
       position: relative;
+      padding: 0;
 
       &::before {
         content: "";
@@ -935,6 +769,196 @@ body {
         left: 50%;
         transform: translateX(-50%);
         bottom: -10px;
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin: 10px auto 130px;
+      flex-wrap: wrap;
+      padding: 0;
+
+      .projectItemsContainer {
+        min-height: 400px;
+        width: 100%;
+        margin: 0;
+        margin-bottom: 30px;
+
+        .projectTitleName {
+          display: block;
+          width: 100%;
+          margin-bottom: 15px;
+          text-align: center;
+          font-variant: all-small-caps;
+          color: $second-color-bright;
+          padding: 0;
+          height: 30px;
+
+          &::before {
+            content: "";
+            position: absolute;
+            width: 130px;
+            display: inline-block;
+            background-position: 0;
+            bottom: -4px;
+            left: 50%;
+            border-bottom: 2px dashed #ff652fba;
+            transform: translateX(-50%);
+          }
+        }
+
+        .projectMain {
+          display: flex;
+          height: 360px;
+
+          .projectImg {
+            position: relative;
+            width: 100%;
+            height: 100%;
+          }
+
+          .anchorGroup {
+            display: flex;
+            width: 200px;
+            justify-content: space-around;
+            height: 40px;
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            .anchorDemo,
+            .anchorRepo {
+              width: 64px;
+              height: 40px;
+              font-size: 0;
+              z-index: 10;
+            }
+
+            .anchorDemo {
+              background: url("./svg/projects/github-demo.svg") no-repeat;
+            }
+
+            .anchorRepo {
+              background: url("./svg/projects/github-repo.svg") no-repeat;
+            }
+          }
+        }
+        .project-description {
+          width: 50%;
+          height: 100%;
+        }
+
+        .svg-description {
+          display: inline-block;
+          background-color: #2b3546;
+          text-align: start;
+          border-radius: 5px;
+          padding: 15px 20px;
+          color: #cacaca;
+          line-height: 25px;
+          font-weight: 300;
+          letter-spacing: 0.5px;
+          margin-top: 60px;
+          margin-bottom: 55px;
+          position: relative;
+          z-index: 3;
+
+          &::before {
+            content: "";
+            width: 300px;
+            height: 105px;
+            position: absolute;
+            background: url("./svg/projects/project-detail.svg") no-repeat;
+            left: -100px;
+            top: -25px;
+            z-index: -1;
+          }
+
+          &::after {
+            content: "Description";
+            color: #ffffffb5;
+            font-size: 1rem;
+            position: absolute;
+            width: 100px;
+            height: 30px;
+            font-weight: 400;
+            top: -42px;
+            left: 35px;
+            z-index: 1;
+            cursor: text;
+          }
+        }
+
+        .svg-tools {
+          text-align: start;
+          display: inline-block;
+          background-color: #2b3546e6;
+          text-align: start;
+          border-radius: 5px;
+          padding: 15px 20px;
+          color: #cacaca;
+          line-height: 25px;
+          font-weight: 300;
+          letter-spacing: 0.5px;
+          position: relative;
+          z-index: 0;
+
+          &::before {
+            content: "";
+            width: 300px;
+            height: 105px;
+            position: absolute;
+            background: url("./svg/projects/project-tools.svg") no-repeat;
+            left: -100px;
+            top: -25px;
+            background-size: 90%;
+            z-index: -1;
+          }
+
+          &::after {
+            content: "Tools";
+            color: #ffffffb5;
+            font-size: 1rem;
+            position: absolute;
+            width: 100px;
+            height: 30px;
+            font-weight: 400;
+            top: -40px;
+            left: 35px;
+            z-index: 1;
+            cursor: text;
+          }
+        }
+
+        .projectImg {
+          justify-content: center;
+          align-items: center;
+          display: flex;
+
+          &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: contain !important;
+          }
+        }
+
+        .projectImg.Madlibs::before {
+          background: url("./svg/projects/madlibs.svg") no-repeat;
+        }
+
+        .projectImg.Movie::before {
+          background: url("./svg/projects/movie.png") no-repeat;
+        }
+
+        .projectImg.Board::before {
+          width: 90%;
+          background: url("./svg/projects/board.svg") no-repeat;
+        }
       }
     }
   }
@@ -1109,7 +1133,7 @@ body {
   padding: 0;
   z-index: 1;
   position: relative;
-  min-width: 100vw;
+  min-width: 100%;
 
   .contact-header {
     width: 100vw;
@@ -1125,18 +1149,20 @@ body {
       min-width: calc(400% + 1.3px);
       width: calc(400% + 1.3px) !important;
       height: 60px;
-      transform: rotateY(180deg);
+      transform: rotateY(180deg) translateY(-1px);
 
       .path1 {
         fill: $fire-color;
         width: 200vw;
         animation: animate 11s linear 1s infinite alternate;
       }
+
       .path2 {
         fill: $fire-color;
         width: 200vw;
         animation: animate 11s linear 3s infinite alternate;
       }
+
       .path3 {
         transform: translateX(0) rotateY(-180deg) !important;
         fill: url(#gradient) !important;
@@ -1188,7 +1214,6 @@ body {
     justify-content: space-around;
     align-items: center;
     max-width: 100%;
-    padding-right: 100px;
 
     &::before {
       content: "";
@@ -1510,12 +1535,22 @@ body {
       }
     }
 
-    #about-section .projectIcon {
-      padding-left: 60px !important;
-    }
-
     .contact-svg__title {
       font-size: 1.7rem;
+    }
+
+    .svg-description,
+    .svg-tools {
+      font-size: 0.8rem;
+    }
+
+    .projectImg::before {
+      height: 70%;
+    }
+
+    .anchorGroup {
+      top: 81%;
+      bottom: auto;
     }
   }
 }
@@ -1578,8 +1613,8 @@ body {
       }
     }
 
-    .form-container {
-      margin-right: 70px;
+    #about-section.opened::before {
+      height: calc(100% + 500px);
     }
 
     .contact-svg {
@@ -1590,10 +1625,21 @@ body {
       &__text {
         font-size: 0.8rem;
       }
+
+      &__img {
+        width: 300px;
+        margin: 20px auto;
+      }
     }
 
     .contact-svg__img {
       width: 115%;
+    }
+
+    #contact-section {
+      .contact-form__wrapper {
+        padding-top: 50px;
+      }
     }
 
     #social-links {
@@ -1603,6 +1649,54 @@ body {
       .socialSectionSvg {
         right: 0;
       }
+    }
+
+    .projectMain {
+      height: 650px;
+      flex-direction: column;
+
+      .projectImgWrapper,
+      .projectDetail {
+        max-height: 50%;
+      }
+
+      .projectImg::before {
+        height: 290px;
+        width: 400px;
+      }
+
+      .anchorGroup {
+        top: auto;
+        bottom: -20px;
+      }
+
+      .projectDetail {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .svg-description::before {
+          background: url("./svg/projects/project-detail--mobile.svg") no-repeat;
+          background-size: contain;
+          height: 170px;
+          top: -175px;
+          left: 0;
+          z-index: -2;
+        }
+
+        .svg-tools::before {
+          background: url("./svg/projects/project-tools--mobile.svg") no-repeat;
+          background-size: contain;
+          height: 244px;
+          top: -248px;
+          left: 0;
+          z-index: -2;
+        }
+      }
+    }
+
+    .projectGeneralTitle {
+      font-size: 1.5rem;
     }
   }
 }
@@ -1699,15 +1793,6 @@ body {
 
     .contact-svg {
       padding-top: 25px;
-
-      &__img {
-        width: 300px;
-        margin: 20px auto;
-      }
-    }
-
-    .contact-header svg {
-      vertical-align: auto;
     }
 
     .form-container {
@@ -1726,6 +1811,36 @@ body {
       .socialSectionSvg {
         width: 150px;
       }
+    }
+
+    .projectItemsContainer {
+      margin-bottom: 100px;
+    }
+
+    .projectMain {
+      .projectImgWrapper {
+        margin-bottom: 20px;
+
+        .projectImg::before {
+          height: 250px;
+          width: 340px;
+          top: 15px;
+        }
+
+        .anchorGroup {
+          bottom: 0;
+        }
+      }
+    }
+
+    .projectMain,
+    .projectDetail {
+      padding: 0;
+    }
+
+    .projectGeneralTitle {
+      margin: 0 auto 60px;
+      width: 70%;
     }
   }
 }
@@ -1796,6 +1911,7 @@ body {
 
     #about-section {
       margin-top: -60px;
+      padding: 30px 0;
 
       .about-greetings {
         &__title {
@@ -1810,7 +1926,6 @@ body {
 
       .story-open {
         width: 100vw;
-        margin-left: -30px;
         padding: 20px 10px;
 
         p,
@@ -1845,6 +1960,26 @@ body {
       a[alt="instagram"] {
         margin: 0;
       }
+    }
+
+    .projectMain {
+      .projectImgWrapper {
+        margin: 0;
+
+        .projectImg::before {
+          height: 200px;
+          width: 290px;
+          top: 40px;
+        }
+
+        .anchorGroup {
+          bottom: 10px;
+        }
+      }
+    }
+
+    .projectGeneralTitle {
+      font-size: 1.2rem;
     }
   }
 
@@ -1893,6 +2028,11 @@ body {
     #about-section {
       margin-top: -100px;
       margin-bottom: -150px;
+      padding: 0;
+
+      .project-open {
+        margin-top: -70px;
+      }
 
       .memoryOpened::after {
         bottom: 30px;
@@ -1950,6 +2090,12 @@ body {
       a[alt="github"]::before {
         height: 25px;
       }
+    }
+
+    .svg-description,
+    .svg-tools {
+      font-size: 0.7rem;
+      line-height: unset;
     }
   }
 }

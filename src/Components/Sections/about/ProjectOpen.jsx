@@ -1,68 +1,36 @@
 import React from "react";
+import { PROJECTS } from "./Project.constants";
 
 export const ProjectOpen = () => {
+  const projectBlock = PROJECTS.map((project, index) => (
+    <div className="projectItemsContainer row" key={project.title + index}>
+      <h3 className="projectTitleName col-12">{project.title}</h3>
+      <div className="projectMain col-12">
+        <div className="col-12 col-xl-5 col-lg-5 col-md-12 col-sm-12 projectImgWrapper">
+          <div className={`projectImg ${project.title}`}></div>
+          <div className="anchorGroup">
+            <a href={project.demoLink} title="Demo" className="anchorDemo">
+              Demo
+            </a>
+            <a href={project.repoLink} title="Repo" className="anchorRepo">
+              Repo
+            </a>
+          </div>
+        </div>
+        <div className="col-12 col-xl-7 col-lg-7 col-md-12 col-sm-12 projectDetail">
+          <span className="svg-description">{project.description}</span>
+          <span className="svg-tools">{project.tools}</span>
+        </div>
+      </div>
+    </div>
+  ));
+
   return (
     <div className="project-open">
-      <h2 className="col-12">Check out the project I have done so far!</h2>
-      <div className="col-11 project-open__single">
-        <h3 className="col-12">MadLibs</h3>
-        <div className="project-open__single--madlibs">
-          <div className="project-open__single--madlibs-svg">
-            <span className="svg-description">
-              Write out a full story that is processed into a format that will
-              allow the one to keep track of "blanks". Whenever the user updates
-              a blank in the edit view, it should update the preview any time a
-              new character is typed.
-            </span>
-            <span className="svg-tools">HTML, CSS, Vanilla JS</span>
-          </div>
-          <div className="project-open__single--madlibs-anchor">
-            <a href="#" title="Demo"></a>
-            <a href="#" title="Repo"></a>
-          </div>
-        </div>
-      </div>
-      <div className="col-11 project-open__single">
-        <h3 className="col-12">Movie</h3>
-        <div className="project-open__single--movie">
-          <div className="project-open__single--movie-svg">
-            <span className="svg-description">
-              Do the styling of Single Movie Page that is fetched from The Movie
-              DB API and build functionalities to move from Movie Page to Actor
-              Page with necessary fields getting filled. Do the search and
-              sorting based on names, get recommendation and trailer section by
-              using API.
-            </span>
-            <span className="svg-tools">
-              HTML, CSS, Bootstrap, Postman, Vanilla JS
-            </span>
-          </div>
-          <div className="project-open__single--movie-anchor">
-            <a href="#" title="Demo"></a>
-            <a href="#" title="Repo"></a>
-          </div>
-        </div>
-      </div>
-      <div className="col-11 project-open__single">
-        <h3 className="col-12">Board</h3>
-        <div className="project-open__single--board">
-          <div className="project-open__single--board-svg">
-            <span className="svg-description">
-              Build a ToDo Board that users can schedule their tasks. Users can
-              create custom boards with unlimited amount of tasks within, move
-              the position of boards freely, change tasks status by clicking and
-              sorting boards to one's heart's content.
-            </span>
-            <span className="svg-tools">
-              HTML, CSS, React-Bootstrap, Material UI, ReactJS, Firebase
-            </span>
-          </div>
-          <div className="project-open__single--board-anchor">
-            <a href="#" title="Demo"></a>
-            <a href="#" title="Repo"></a>
-          </div>
-        </div>
-      </div>
+      <h2 className="col-12 projectGeneralTitle">
+        Check out the project I have done so far!
+      </h2>
+      <div className="col-12 project-open__wrapper">{projectBlock}</div>
     </div>
   );
 };
