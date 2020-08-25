@@ -42,7 +42,12 @@ export const IntroSection = () => {
           </Link>
         </div>
         <div className="view-resume">
-          <a href={RESUME} title="View Resume">
+          <a
+            href={RESUME}
+            title="View Resume"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             View Resume
           </a>
         </div>

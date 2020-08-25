@@ -108,7 +108,7 @@ body {
       display: inline-block;
       max-width: 100%;
       font-size: 15px;
-      padding-left: 35px;
+      padding-left: 42px;
       font-weight: 500;
     }
   }
@@ -190,13 +190,9 @@ body {
     padding-left: 15px;
 
     &::before {
-      left: 20px;
+      left: 35px;
       position: absolute;
     }
-  }
-
-  .sidebar-item .fas.fa-file-contract::before {
-    left: 25px !important;
   }
 }
 
@@ -204,6 +200,10 @@ body {
   min-height: 100vh;
   padding: 0;
   overflow: hidden;
+}
+
+#homepage.sidebarOpened {
+  min-width: 100%;
 }
 
 #intro-section {
