@@ -531,6 +531,7 @@ body {
       text-align: center;
       cursor: pointer;
       min-height: 250px;
+      position: relative;
 
       &--memory {
         background: url("./svg/memories.png") no-repeat;
@@ -538,6 +539,7 @@ body {
         left: 0;
         min-height: 250px;
         background-size: contain;
+        position: relative;
       }
 
       &--story {
@@ -561,6 +563,22 @@ body {
       .fab {
         font-size: 200px;
       }
+    }
+
+    .memoryOpened::after {
+      content: "Coming soon...";
+      position: absolute;
+      display: block;
+      bottom: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 160px;
+      height: 40px;
+      padding: 10px;
+      color: black;
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 5px;
+      line-height: 1.1rem;
     }
   }
   .story-open,
@@ -1074,6 +1092,15 @@ body {
 #about-section.opened {
   &::before {
     height: 150%;
+  }
+}
+
+// Handle special bg sizing only for memoryTooltip in certain size.
+@media only screen and (min-width: 992px) {
+  #about-section.memoryOpenedClassName {
+    &::before {
+      height: 900px !important;
+    }
   }
 }
 
@@ -1866,6 +1893,10 @@ body {
     #about-section {
       margin-top: -100px;
       margin-bottom: -150px;
+
+      .memoryOpened::after {
+        bottom: 30px;
+      }
 
       .main-hall__icons {
         &--story,
