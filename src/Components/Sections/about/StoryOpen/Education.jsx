@@ -33,7 +33,7 @@ export const Education = () => {
         </p>
         <p>
           After my graduation in MIS, I am blessed to participate in a Front-End
-          Web Developer Bootcamp in
+          Web Developer Bootcamp in{" "}
           <a
             className="outer-links"
             href="https://www.re-coded.com/"
@@ -49,14 +49,13 @@ export const Education = () => {
             applications and more
           </span>{" "}
           with the help of caring instructors Re:Coded Team assigned to us and
-          curriculum of
+          curriculum of{" "}
           <a
             className="outer-links"
             href="https://flatironschool.com/"
             target="_blank"
             rel="noopener noreferrer"
           >
-            {" "}
             Flatiron Academy
           </a>
           ! I, now, have gained interest in Back-End side as well and I strive

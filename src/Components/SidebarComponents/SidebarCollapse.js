@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { SidebarContext } from "../../App";
 
-export const SidebarCollapse = ({ isOpen, setOpen }) => {
-  const handleCollapse = (e) => {
-    e.preventDefault();
-    return setOpen(!isOpen);
-  };
+export const SidebarCollapse = () => {
+  const { isSidebarOpen, setIsSidebarOpen } = useContext(SidebarContext);
+
+  const handleCollapse = (e) => setIsSidebarOpen(!isSidebarOpen);
 
   return (
     <a href="#" alt="collapse">
