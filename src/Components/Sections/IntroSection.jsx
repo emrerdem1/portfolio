@@ -7,17 +7,17 @@ export const IntroSection = () => {
     <div className="row" id="intro-section">
       <div className="col-6 intro-box">
         <div className="intro-box__header">
-        <div className="intro-box__header--double"><h2>
-          Emre Erdem</h2>
-          <h2>
-          Emre Erdem</h2></div>
+          <div className="intro-box__header--double">
+            <h2>Emre Erdem</h2>
+            <h2>Emre Erdem</h2>
+          </div>
           <div className="intro-box__header--break"></div>
           <span className="junior-dev">Junior Web Developer</span>
         </div>
         <p>
           A <span className="webdeveloper">web developer</span> who is fond of
-          coding, lifelong learning and petting stray cats! And I do build aesthetic
-          and useful websites and applications!
+          coding, lifelong learning and petting stray cats! And I do build
+          aesthetic and useful websites and applications!
         </p>
         <div className="intro-box__buttons">
           <div className="view-more">
