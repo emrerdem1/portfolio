@@ -19,7 +19,7 @@ export const SidebarItems = () => {
           <div className="sidebar-item" title="Entrance">
             <i className="fab fa-fort-awesome-alt sidebarIcon">
               {isSidebarOpen && <span className="sidebar-span">Entrance</span>}
-            </i>{" "}
+            </i>
           </div>
         </div>
       </Link>
@@ -27,7 +27,7 @@ export const SidebarItems = () => {
         to="about-section"
         spy={true}
         smooth={true}
-        offset={0}
+        offset={-80}
         duration={500}
         className="sidebarItemContainer"
       >
@@ -44,7 +44,7 @@ export const SidebarItems = () => {
         to="contact-section"
         spy={true}
         smooth={true}
-        offset={0}
+        offset={180}
         duration={500}
         className="sidebarItemContainer"
       >
