@@ -14,8 +14,25 @@ export const Hobby = () => {
         </p>
         <p>
           I'm also
-          <a href="https://www.liveabout.com/what-is-anime-144982"> Anime </a>
-          and <a href="https://en.wikipedia.org/wiki/Manga"> Manga </a>
+          <a
+            className="outer-links"
+            href="https://www.liveabout.com/what-is-anime-144982"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            Anime{" "}
+          </a>
+          and{" "}
+          <a
+            className="outer-links"
+            href="https://en.wikipedia.org/wiki/Manga"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            Manga{" "}
+          </a>
           enthusiast so much so that I've been started translating subtitles of
           them from English to Turkish since the highschool days! I have
           completed dozen hundreds of subtitles for Anime series that I loved,

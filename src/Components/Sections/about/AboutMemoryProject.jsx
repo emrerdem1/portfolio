@@ -1,5 +1,5 @@
 import React, { useReducer } from "react";
-import { StoryOpen, MemoryOpen, ProjectOpen } from "./export_about";
+import { StoryOpen, ProjectOpen } from "./export_about";
 
 function reducer(state, action) {
   switch (action.type) {
@@ -55,12 +55,14 @@ export const AboutMemoryProject = () => {
           <svg className="main-hall__icons--project"></svg>
         </div>
         <div
-          className={`col-xl-4 col-lg-3 col-md-12 col-sm-12 col-xs-10 main-hall__icons ${
-            memory ? "memoryOpened" : ""
-          }`}
+          className="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-10 main-hall__icons memoryIcon"
           onClick={() => invokeReducer("memory")}
         >
-          <svg className={`main-hall__icons--memory`}></svg>
+          <div
+            className={`main-hall__icons--memory ${
+              memory ? "memoryOpened" : ""
+            }`}
+          ></div>
         </div>
       </div>
       {story ? <StoryOpen /> : project && <ProjectOpen />}

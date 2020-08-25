@@ -30,15 +30,14 @@ export const ContactForm = () => {
 
   return (
     <div className="row contact-form__wrapper">
-      <div className="col-12 col-md-4 col-sm-12 contact-svg">
+      <div className="col-12 col-lg-4 col-md-12 col-sm-12 contact-svg">
         <h2 className="contact-svg__title">Contact me!</h2>
         <p className="contact-svg__text">
           I love making acquaintance with new people!
         </p>
-        <svg
-          className="contact-svg__img"></svg>
+        <svg className="contact-svg__img"></svg>
       </div>
-      <div className="col-12 col-md-6 col-sm-12 form-container">
+      <div className="col-12 col-lg-6 col-md-12 col-sm-12 form-container">
         <form>
           <input
             type="text"
