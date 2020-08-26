@@ -916,13 +916,12 @@ body {
 
           &::before {
             content: "";
-            width: 300px;
+            width: 330px;
             height: 105px;
             position: absolute;
             background: url("./svg/projects/project-tools.svg") no-repeat;
-            left: -100px;
-            top: -25px;
-            background-size: 90%;
+            left: -155px;
+            top: -105px;
             z-index: -1;
           }
 
@@ -967,6 +966,14 @@ body {
         .projectImg.Board::before {
           width: 90%;
           background: url("./svg/projects/board.svg") no-repeat;
+        }
+
+        .projectImg.E-Commerce::before {
+          background: url("./svg/projects/ecommerce.svg") no-repeat;
+        }
+
+        .projectImg.Portfolio::before {
+          background: url("./svg/projects/portfolio.svg") no-repeat;
         }
       }
     }
