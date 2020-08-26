@@ -29,6 +29,23 @@ const MOVIE_LINKS = {
   demo: "https://todo-board-project.netlify.app/",
 };
 
+const PORTFOLIO_DESCRIPTION = `My playground that contains where I'm from and what my passions are as well as projects
+from the little scaled ones I've worked on Front-End Developer Bootcamps to the ones I'm gonna develop that I'm proud of.`;
+const PORTFOLIO_TOOLS = `HTML, SCSS, Bootstrap, ReactJS`;
+const PORTFOLIO_LINKS = {
+  repo: "https://github.com/emrerdem1/portfolio",
+  demo: "https://emrerdem.netlify.app/",
+};
+
+const ECOMMERCE_DESCRIPTION = `E-commerce website where users can sign-up, have access to their own profile pages,
+do live searching, add items to shopping cart, read educational news and articles brought forth by Wordpress API.
+The website is supported by dual language and aim to provide health related products and articles.`;
+const ECOMMERCE_TOOLS = `HTML, SCSS, React-Bootstrap, ReactJS, Redux, i18next, Firebase, Wordpress API`;
+const ECOMMERCE_LINKS = {
+  repo: "https://github.com/emrerdem1/istanbul-capstone-ecommerce",
+  demo: "http://istanbul-capstone-ecommerce.netlify.app/",
+};
+
 export const PROJECTS = [
   {
     title: "Madlibs",
@@ -50,5 +67,19 @@ export const PROJECTS = [
     tools: BOARD_TOOLS,
     demoLink: BOARD_LINKS.demo,
     repoLink: BOARD_LINKS.repo,
+  },
+  {
+    title: "Portfolio",
+    description: PORTFOLIO_DESCRIPTION,
+    tools: PORTFOLIO_TOOLS,
+    demoLink: PORTFOLIO_LINKS.demo,
+    repoLink: PORTFOLIO_LINKS.repo,
+  },
+  {
+    title: "E-Commerce",
+    description: ECOMMERCE_DESCRIPTION,
+    tools: ECOMMERCE_TOOLS,
+    demoLink: ECOMMERCE_LINKS.demo,
+    repoLink: ECOMMERCE_LINKS.repo,
   },
 ];
