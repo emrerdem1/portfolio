@@ -4,12 +4,12 @@ import { PROJECTS } from "./Project.constants";
 const MOVE_VERTICAL_AMOUNT = 350;
 
 export const ProjectOpen = () => {
-  const scrollToThis = useRef(null);
+  const scrollToProject = useRef(null);
 
   useEffect(
     () =>
       window.scrollTo({
-        top: scrollToThis.current.offsetTop + MOVE_VERTICAL_AMOUNT,
+        top: scrollToProject.current.offsetTop + MOVE_VERTICAL_AMOUNT,
         left: 0,
         behavior: "smooth",
       }),
@@ -40,7 +40,7 @@ export const ProjectOpen = () => {
   ));
 
   return (
-    <div className="project-open" ref={scrollToThis}>
+    <div className="project-open" ref={scrollToProject}>
       <h2 className="col-12 projectGeneralTitle">
         Check out the project I have done so far!
       </h2>

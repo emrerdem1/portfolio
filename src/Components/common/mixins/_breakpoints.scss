@@ -19,5 +19,9 @@
     @media only screen and (max-width: 1200px) {
       @content;
     }
+  } @else if $breakpoint == wide-desktop {
+    @media only screen and (max-width: 1500px) {
+      @content;
+    }
   }
 }
