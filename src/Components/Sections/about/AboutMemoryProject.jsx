@@ -107,7 +107,7 @@ export const AboutMemoryProject = () => {
       id="about-section"
       ref={wrapperRef}
     >
-      <div className="row d-flex flex-wrap justify-content-center align-items-center mx-0">
+      <div className="row iconsContainer">
         <div className="col-12 about-greetings">
           <h2 className="about-greetings__title">
             Want to know <span>a bit more</span> about me?
