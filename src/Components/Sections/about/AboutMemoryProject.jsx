@@ -1,5 +1,15 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useEffect, useRef } from "react";
 import { StoryOpen, ProjectOpen } from "./export_about";
+
+const MOVE_VERTICAL_TO_MEMORY = 276;
+const MOVE_TO_START_OF_SECTION = -70;
+
+const elementToScroll = (ref, position) =>
+  window.scrollTo({
+    top: ref.current.offsetTop + position,
+    left: 0,
+    behavior: "smooth",
+  });
 
 function reducer(state, action) {
   switch (action.type) {
@@ -8,6 +18,7 @@ function reducer(state, action) {
         story: !state.story,
         memory: false,
         project: false,
+        neutral: false,
       };
 
     case "memory":
@@ -15,6 +26,7 @@ function reducer(state, action) {
         memory: !state.memory,
         story: false,
         project: false,
+        neutral: false,
       };
 
     case "project":
@@ -22,6 +34,7 @@ function reducer(state, action) {
         project: !state.project,
         memory: false,
         story: false,
+        neutral: false,
       };
 
     default:
@@ -30,11 +43,15 @@ function reducer(state, action) {
 }
 
 export const AboutMemoryProject = () => {
-  const [{ story, memory, project }, dispatch] = useReducer(reducer, {
+  const [{ story, memory, project, neutral }, dispatch] = useReducer(reducer, {
     story: false,
     memory: false,
     project: false,
+    neutral: true,
   });
+
+  const memoryIconRef = useRef(null);
+  const wrapperRef = useRef(null);
 
   const iconTransitions = story
     ? "showStoryLast"
@@ -43,6 +60,14 @@ export const AboutMemoryProject = () => {
     : "";
 
   const invokeReducer = (section) => dispatch({ type: section });
+
+  useEffect(() => {
+    if (memory) {
+      elementToScroll(memoryIconRef, MOVE_VERTICAL_TO_MEMORY);
+    } else if (!story && !project && !memory && !neutral) {
+      elementToScroll(wrapperRef, MOVE_TO_START_OF_SECTION);
+    }
+  }, [story, memory, project, neutral]);
 
   const storyIcon = (
     <div
@@ -66,6 +91,7 @@ export const AboutMemoryProject = () => {
     <div
       className={`col-xl-4 col-lg-4 col-md-5 col-sm-12 col-xs-10 main-hall__icons memoryIcon ${iconTransitions}`}
       onClick={() => invokeReducer("memory")}
+      ref={memoryIconRef}
     >
       <div
         className={`main-hall__icons--memory ${memory ? "memoryOpened" : ""} `}
@@ -79,8 +105,9 @@ export const AboutMemoryProject = () => {
         story || project ? "opened" : memory ? "memoryOpenedClassName" : ""
       }`}
       id="about-section"
+      ref={wrapperRef}
     >
-      <div className="row d-flex flex-wrap justify-content-center align-items-center mx-0">
+      <div className="row iconsContainer">
         <div className="col-12 about-greetings">
           <h2 className="about-greetings__title">
             Want to know <span>a bit more</span> about me?

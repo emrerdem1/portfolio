@@ -8,7 +8,7 @@ export const Sidebar = () => {
 
   return (
     <div
-      className={`row col-xl-1 col-lg-1 col-md-2 col-sm-2 col-xs-12 d-flex flex-column ${
+      className={`row col-xl-1 col-lg-1 col-md-2 col-sm-2 col-xs-12 d-flex flex-column sidebarMainWrapper ${
         isSidebarOpen ? "sidebar-open" : ""
       }`}
       id="sidebar"

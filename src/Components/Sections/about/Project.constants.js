@@ -34,7 +34,7 @@ from the little scaled ones I've worked on Front-End Developer Bootcamps to the 
 const PORTFOLIO_TOOLS = `HTML, SCSS, Bootstrap, ReactJS`;
 const PORTFOLIO_LINKS = {
   repo: "https://github.com/emrerdem1/portfolio",
-  demo: "https://emrerdem.netlify.app/",
+  demo: "https://emrerdem.com/",
 };
 
 const ECOMMERCE_DESCRIPTION = `E-commerce website where users can sign-up, have access to their own profile pages,

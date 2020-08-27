@@ -1,14 +1,18 @@
 @mixin media($breakpoint) {
-  @if $breakpoint == phone-sm {
+  @if $breakpoint == phone-xs {
+    @media only screen and (max-width: 320px) {
+      @content;
+    }
+  } @else if $breakpoint == phone-sm {
     @media only screen and (max-width: 375px) {
       @content;
     }
   } @else if $breakpoint == phone {
-    @media only screen and (max-width: 576px) {
+    @media only screen and (max-width: 577px) {
       @content;
     }
   } @else if $breakpoint == tablet-sm {
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 767px) {
       @content;
     }
   } @else if $breakpoint == tablet {
@@ -16,7 +20,19 @@
       @content;
     }
   } @else if $breakpoint == desktop {
-    @media only screen and (max-width: 1200px) {
+    @media only screen and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $breakpoint == wide-desktop {
+    @media only screen and (max-width: 1500px) {
+      @content;
+    }
+  }
+}
+
+@mixin deviceHeight($breakpoint) {
+  @if $breakpoint == landscape {
+    @media only screen and (max-height: 450px) {
       @content;
     }
   }

@@ -42,12 +42,20 @@ body {
 
   .sidebarItemContainer {
     max-height: 85px;
+    height: 15%;
+
+    .sidebarItemWrapper {
+      height: 100%;
+
+      .sidebar-item {
+        height: 100%;
+      }
+    }
   }
 
   .sidebar-item {
     width: 100%;
     max-height: 70px;
-    height: 70px;
     text-align: center;
     color: $second-color;
     transition: all 0.5s ease;
@@ -57,6 +65,7 @@ body {
       border-radius: 5px;
       color: $primary-color;
       cursor: pointer;
+      border-right: 1.5px solid $fire-color;
     }
 
     .fas,
@@ -90,12 +99,11 @@ body {
       content: attr(title);
       color: #86c2329e;
       position: absolute;
-      bottom: -5px;
       font-size: 12px;
       left: 50%;
-      top: 85%;
+      bottom: 5px;
       transition: all 1s ease-in-out;
-      transform: translate(-50%, -50%);
+      transform: translateX(-50%);
       opacity: 0;
       width: 100%;
     }
@@ -128,14 +136,10 @@ body {
     padding: 0;
     border: none;
     transition: border 0.2s linear;
-
-    &:hover {
-      border-right: 1.5px solid $fire-color;
-    }
   }
 
   .sidebar-collapse-section {
-    margin-bottom: 50px;
+    margin-bottom: 9vh;
     position: relative;
     min-width: 100%;
     max-height: 70px;
@@ -167,10 +171,14 @@ body {
   min-width: 200px !important;
   background-color: $bg-color !important;
 
+  .sidebar-collapse-section::after {
+    left: 54%;
+  }
+
   .fa-angle-double-up {
-    transform: rotate(270deg) translate(15%, 0) !important;
+    transform: rotate(270deg) translate(15%, 25%) !important;
     transform-origin: left center !important;
-    padding: 0;
+    padding: 0 !important;
     left: 50%;
 
     &::before {
@@ -478,6 +486,12 @@ body {
     opacity: 0.2;
     min-width: 100%;
     margin-top: -200px;
+  }
+
+  .iconsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .storyIcon.showStoryLast {
@@ -843,6 +857,13 @@ body {
         .projectMain {
           display: flex;
           height: 360px;
+          justify-content: center;
+          align-items: center;
+
+          .projectImgWrapper {
+            max-width: 500px;
+            height: 100%;
+          }
 
           .projectImg {
             position: relative;
@@ -883,6 +904,11 @@ body {
           height: 100%;
         }
 
+        .svg-description,
+        .svg-tools {
+          max-width: 800px;
+        }
+
         .svg-description {
           display: inline-block;
           background-color: #2b3546;
@@ -899,14 +925,15 @@ body {
           z-index: 3;
 
           &::before {
-            content: "";
-            width: 300px;
-            height: 105px;
             position: absolute;
-            background: url("./svg/projects/project-detail.svg") no-repeat;
-            left: -100px;
-            top: -25px;
+            content: "";
+            background: url("./svg/projects/project-detail--extrawide.svg")
+              no-repeat;
             z-index: -1;
+            width: 550px;
+            height: 85px;
+            left: -310px;
+            top: -30px;
           }
 
           &::after {
@@ -940,13 +967,14 @@ body {
 
           &::before {
             content: "";
-            width: 330px;
-            height: 105px;
             position: absolute;
-            background: url("./svg/projects/project-tools.svg") no-repeat;
-            left: -155px;
-            top: -105px;
+            background: url("./svg/projects/project-tools--extrawide.svg")
+              no-repeat;
             z-index: -1;
+            width: 500px;
+            height: 80px;
+            left: -302px;
+            top: -67px;
           }
 
           &::after {
@@ -1569,6 +1597,28 @@ body {
   }
 }
 
+@include media(wide-desktop) {
+  #about-section {
+    .project-open__wrapper .projectItemsContainer {
+      .svg-description::before {
+        background: url("./svg/projects/project-detail.svg") no-repeat;
+        width: 300px;
+        height: 105px;
+        left: -100px;
+        top: -25px;
+      }
+
+      .svg-tools::before {
+        background: url("./svg/projects/project-tools.svg") no-repeat;
+        width: 330px;
+        height: 105px;
+        left: -155px;
+        top: -105px;
+      }
+    }
+  }
+}
+
 @include media(desktop) {
   #root #homepage {
     #intro-section {
@@ -1625,12 +1675,18 @@ body {
     }
 
     .anchorGroup {
-      top: 81%;
-      bottom: auto;
+      bottom: -10px;
     }
 
     .projectIcon {
-      padding-left: 55px;
+      transform: translateX(7%);
+    }
+
+    .storyIcon.showStoryLast {
+      transform: translateX(130%);
+    }
+    .projectIcon.showStoryLast {
+      transform: translateX(-75%);
     }
   }
 }
@@ -1667,6 +1723,16 @@ body {
         height: calc(100% + 500px);
       }
 
+      .iconsContainer {
+        justify-content: space-around;
+      }
+
+      .projectIcon {
+        padding-left: 0;
+        min-width: 310px;
+        transform: none;
+      }
+
       .storyIcon.showStoryLast {
         transform: translate(50%, 100%);
       }
@@ -1682,11 +1748,6 @@ body {
 
       .projectIcon.showStoryLast {
         transform: translateX(-100%);
-      }
-
-      .projectIcon {
-        padding-left: 0;
-        min-width: 300px;
       }
 
       .main-hall__icons {
@@ -1770,8 +1831,7 @@ body {
       }
 
       .anchorGroup {
-        top: auto;
-        bottom: -20px;
+        bottom: -30px;
       }
 
       .projectDetail {
@@ -1780,8 +1840,7 @@ body {
         justify-content: center;
 
         .svg-description::before {
-          background: url("./svg/projects/project-detail--mobilev2.svg")
-            no-repeat;
+          background: url("./svg/projects/project-detail--mobile.svg") no-repeat;
           background-size: contain;
           height: 221px;
           top: -225px;
@@ -1881,6 +1940,12 @@ body {
         }
       }
 
+      .main-hall__icons {
+        &--memory {
+          min-width: 230px;
+        }
+      }
+
       .projectIcon {
         padding-left: 0 !important;
       }
@@ -1963,6 +2028,36 @@ body {
     .projectGeneralTitle {
       margin: 0 auto 60px;
       width: 70%;
+    }
+  }
+}
+
+@include deviceHeight(landscape) {
+  #sidebar {
+    .sidebar-collapse-section {
+      margin-bottom: 7vh !important;
+
+      &::after {
+        bottom: -20px !important;
+      }
+
+      .sidebar-item.collapse-text:hover::after {
+        padding-bottom: 0px !important;
+        font-size: 9px !important;
+      }
+    }
+    .sidebarItemContainer {
+      .sidebar-item {
+        &::after {
+          font-size: 9px !important;
+          bottom: 5px;
+        }
+
+        .fas,
+        .fab {
+          font-size: 25px !important;
+        }
+      }
     }
   }
 }
@@ -2114,6 +2209,10 @@ body {
     position: fixed;
     margin: 0;
 
+    .sidebarItemContainer {
+      height: 70px;
+    }
+
     .sidebar-collapse-section {
       display: none !important;
     }
@@ -2127,25 +2226,27 @@ body {
       width: auto;
     }
 
-    a > div:hover {
-      border-top: 1.5px solid #ff652f;
+    .sidebar-item:hover {
+      border-top: 1.5px solid $fire-color;
       border-right: none;
-    }
 
-    .sidebar-item:hover .sidebarIcon {
-      padding-bottom: 20px;
+      .sidebarIcon {
+        padding-bottom: 20px;
+      }
     }
 
     .sidebar-item::after {
-      bottom: 5px;
+      bottom: 10px;
       top: auto;
-      font-size: 10px;
+      font-size: 10.5px;
       transition: none;
     }
 
-    .sidebar-item .fab,
-    .fas {
-      font-size: 29px !important;
+    .sidebar-item {
+      .fab,
+      .fas {
+        font-size: 29px;
+      }
     }
   }
 }
@@ -2205,6 +2306,10 @@ body {
       padding: 0.3rem 0.3rem;
     }
 
+    .contact-svg__img {
+      width: 90%;
+    }
+
     .socialsWrapper {
       a {
         font-size: 40px;
@@ -2223,6 +2328,12 @@ body {
     .svg-tools {
       font-size: 0.7rem;
       line-height: unset;
+    }
+  }
+
+  #sidebar {
+    .sidebar-item::after {
+      font-size: 9px;
     }
   }
 }
@@ -2253,5 +2364,21 @@ body {
   &:hover::before {
     height: 100%;
     background-image: linear-gradient(45deg, #e4745a70 0%, #f44336b5 100%);
+  }
+}
+
+@include media(phone-xs) {
+  #sidebar {
+    .sidebar-item::after {
+      display: none;
+    }
+    .sidebar-item:hover .sidebarIcon {
+      padding: 0;
+    }
+
+    .fas,
+    .fab {
+      font-size: 25px !important;
+    }
   }
 }
