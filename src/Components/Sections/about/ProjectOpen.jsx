@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { PROJECTS } from "./Project.constants";
 
+const MOVE_VERTICAL_AMOUNT = 350;
+
 export const ProjectOpen = () => {
+  const scrollToThis = useRef(null);
+
+  useEffect(
+    () =>
+      window.scrollTo({
+        top: scrollToThis.current.offsetTop + MOVE_VERTICAL_AMOUNT,
+        left: 0,
+        behavior: "smooth",
+      }),
+    []
+  );
+
   const projectBlock = PROJECTS.map((project, index) => (
     <div className="projectItemsContainer row" key={project.title + index}>
       <h3 className="projectTitleName col-12">{project.title}</h3>
@@ -26,7 +40,7 @@ export const ProjectOpen = () => {
   ));
 
   return (
-    <div className="project-open">
+    <div className="project-open" ref={scrollToThis}>
       <h2 className="col-12 projectGeneralTitle">
         Check out the project I have done so far!
       </h2>
