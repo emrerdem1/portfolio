@@ -65,6 +65,7 @@ body {
       border-radius: 5px;
       color: $primary-color;
       cursor: pointer;
+      border-right: 1.5px solid $fire-color;
     }
 
     .fas,
@@ -98,12 +99,11 @@ body {
       content: attr(title);
       color: #86c2329e;
       position: absolute;
-      bottom: -5px;
       font-size: 12px;
       left: 50%;
-      top: 85%;
+      bottom: 5px;
       transition: all 1s ease-in-out;
-      transform: translate(-50%, -50%);
+      transform: translateX(-50%);
       opacity: 0;
       width: 100%;
     }
@@ -136,10 +136,6 @@ body {
     padding: 0;
     border: none;
     transition: border 0.2s linear;
-
-    &:hover {
-      border-right: 1.5px solid $fire-color;
-    }
   }
 
   .sidebar-collapse-section {
@@ -175,10 +171,14 @@ body {
   min-width: 200px !important;
   background-color: $bg-color !important;
 
+  .sidebar-collapse-section::after {
+    left: 54%;
+  }
+
   .fa-angle-double-up {
-    transform: rotate(270deg) translate(15%, 0) !important;
+    transform: rotate(270deg) translate(15%, 25%) !important;
     transform-origin: left center !important;
-    padding: 0;
+    padding: 0 !important;
     left: 50%;
 
     &::before {
@@ -486,6 +486,12 @@ body {
     opacity: 0.2;
     min-width: 100%;
     margin-top: -200px;
+  }
+
+  .iconsContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .storyIcon.showStoryLast {
@@ -852,9 +858,11 @@ body {
           display: flex;
           height: 360px;
           justify-content: center;
+          align-items: center;
 
           .projectImgWrapper {
             max-width: 500px;
+            height: 100%;
           }
 
           .projectImg {
@@ -1667,8 +1675,11 @@ body {
     }
 
     .anchorGroup {
-      top: 81%;
-      bottom: auto;
+      bottom: -10px;
+    }
+
+    .projectIcon {
+      transform: translateX(7%);
     }
 
     .storyIcon.showStoryLast {
@@ -1712,6 +1723,16 @@ body {
         height: calc(100% + 500px);
       }
 
+      .iconsContainer {
+        justify-content: space-around;
+      }
+
+      .projectIcon {
+        padding-left: 0;
+        min-width: 310px;
+        transform: none;
+      }
+
       .storyIcon.showStoryLast {
         transform: translate(50%, 100%);
       }
@@ -1727,11 +1748,6 @@ body {
 
       .projectIcon.showStoryLast {
         transform: translateX(-100%);
-      }
-
-      .projectIcon {
-        padding-left: 0;
-        min-width: 310px;
       }
 
       .main-hall__icons {
@@ -1815,8 +1831,7 @@ body {
       }
 
       .anchorGroup {
-        top: auto;
-        bottom: -20px;
+        bottom: -30px;
       }
 
       .projectDetail {
@@ -2035,7 +2050,7 @@ body {
       .sidebar-item {
         &::after {
           font-size: 9px !important;
-          top: 88% !important;
+          bottom: 5px;
         }
 
         .fas,
@@ -2211,25 +2226,27 @@ body {
       width: auto;
     }
 
-    a > div:hover {
-      border-top: 1.5px solid #ff652f;
+    .sidebar-item:hover {
+      border-top: 1.5px solid $fire-color;
       border-right: none;
-    }
 
-    .sidebar-item:hover .sidebarIcon {
-      padding-bottom: 20px;
+      .sidebarIcon {
+        padding-bottom: 20px;
+      }
     }
 
     .sidebar-item::after {
-      bottom: 5px;
+      bottom: 10px;
       top: auto;
-      font-size: 10px;
+      font-size: 10.5px;
       transition: none;
     }
 
-    .sidebar-item .fab,
-    .fas {
-      font-size: 29px !important;
+    .sidebar-item {
+      .fab,
+      .fas {
+        font-size: 29px;
+      }
     }
   }
 }
@@ -2313,6 +2330,12 @@ body {
       line-height: unset;
     }
   }
+
+  #sidebar {
+    .sidebar-item::after {
+      font-size: 9px;
+    }
+  }
 }
 
 .outer-links {
@@ -2341,5 +2364,21 @@ body {
   &:hover::before {
     height: 100%;
     background-image: linear-gradient(45deg, #e4745a70 0%, #f44336b5 100%);
+  }
+}
+
+@include media(phone-xs) {
+  #sidebar {
+    .sidebar-item::after {
+      display: none;
+    }
+    .sidebar-item:hover .sidebarIcon {
+      padding: 0;
+    }
+
+    .fas,
+    .fab {
+      font-size: 25px !important;
+    }
   }
 }
