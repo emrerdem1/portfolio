@@ -15,7 +15,7 @@ export const SidebarItems = () => {
         duration={500}
         className="sidebarItemContainer"
       >
-        <div className="col-2 d-flex align-items-center sidebar-entrance">
+        <div className="col-2 d-flex align-items-center sidebarItemWrapper sidebar-entrance">
           <div className="sidebar-item" title="Entrance">
             <i className="fab fa-fort-awesome-alt sidebarIcon">
               {isSidebarOpen && <span className="sidebar-span">Entrance</span>}
@@ -31,7 +31,7 @@ export const SidebarItems = () => {
         duration={500}
         className="sidebarItemContainer"
       >
-        <div className="col-2 d-flex align-items-center sidebar-mainhall">
+        <div className="col-2 d-flex align-items-center sidebarItemWrapper sidebar-mainhall">
           <div className="sidebar-item" title="Main Hall">
             <i className="fas fa-mug-hot sidebarIcon">
               {isSidebarOpen && <span className="sidebar-span">Main Hall</span>}
@@ -48,7 +48,7 @@ export const SidebarItems = () => {
         duration={500}
         className="sidebarItemContainer"
       >
-        <div className="col-2 d-flex align-items-center sidebar-briefing">
+        <div className="col-2 d-flex align-items-center sidebarItemWrapper sidebar-briefing">
           <div className="sidebar-item" title="Briefing Room">
             <i className="fas fa-envelope sidebarIcon">
               {isSidebarOpen && (
@@ -67,7 +67,7 @@ export const SidebarItems = () => {
         duration={500}
         className="sidebarItemContainer"
       >
-        <div className="col-2 d-flex align-items-center sidebar-social">
+        <div className="col-2 d-flex align-items-center sidebarItemWrapper sidebar-social">
           <div className="sidebar-item" title="Socials">
             <i className="fas fa-hashtag sidebarIcon">
               {isSidebarOpen && <span className="sidebar-span">Socials</span>}
@@ -83,7 +83,7 @@ export const SidebarItems = () => {
         className="sidebarItemContainer"
       >
         <div
-          className="col-2 d-flex align-items-center sidebar-contact"
+          className="col-2 d-flex align-items-center sidebarItemWrapper sidebar-contact"
           style={{ margin: "auto 0 20px 0" }}
         >
           <div className="sidebar-item" title="Resume">

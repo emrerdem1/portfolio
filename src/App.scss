@@ -42,12 +42,20 @@ body {
 
   .sidebarItemContainer {
     max-height: 85px;
+    height: 15%;
+
+    .sidebarItemWrapper {
+      height: 100%;
+
+      .sidebar-item {
+        height: 100%;
+      }
+    }
   }
 
   .sidebar-item {
     width: 100%;
     max-height: 70px;
-    height: 70px;
     text-align: center;
     color: $second-color;
     transition: all 0.5s ease;
@@ -135,7 +143,7 @@ body {
   }
 
   .sidebar-collapse-section {
-    margin-bottom: 50px;
+    margin-bottom: 9vh;
     position: relative;
     min-width: 100%;
     max-height: 70px;
@@ -886,6 +894,11 @@ body {
         .project-description {
           width: 50%;
           height: 100%;
+        }
+
+        .svg-description,
+        .svg-tools {
+          max-width: 800px;
         }
 
         .svg-description {
@@ -1658,8 +1671,11 @@ body {
       bottom: auto;
     }
 
-    .projectIcon {
-      padding-left: 55px;
+    .storyIcon.showStoryLast {
+      transform: translateX(130%);
+    }
+    .projectIcon.showStoryLast {
+      transform: translateX(-75%);
     }
   }
 }
@@ -1715,7 +1731,7 @@ body {
 
       .projectIcon {
         padding-left: 0;
-        min-width: 300px;
+        min-width: 310px;
       }
 
       .main-hall__icons {
@@ -1909,6 +1925,12 @@ body {
         }
       }
 
+      .main-hall__icons {
+        &--memory {
+          min-width: 230px;
+        }
+      }
+
       .projectIcon {
         padding-left: 0 !important;
       }
@@ -1991,6 +2013,36 @@ body {
     .projectGeneralTitle {
       margin: 0 auto 60px;
       width: 70%;
+    }
+  }
+}
+
+@include deviceHeight(landscape) {
+  #sidebar {
+    .sidebar-collapse-section {
+      margin-bottom: 7vh !important;
+
+      &::after {
+        bottom: -20px !important;
+      }
+
+      .sidebar-item.collapse-text:hover::after {
+        padding-bottom: 0px !important;
+        font-size: 9px !important;
+      }
+    }
+    .sidebarItemContainer {
+      .sidebar-item {
+        &::after {
+          font-size: 9px !important;
+          top: 88% !important;
+        }
+
+        .fas,
+        .fab {
+          font-size: 25px !important;
+        }
+      }
     }
   }
 }
@@ -2142,6 +2194,10 @@ body {
     position: fixed;
     margin: 0;
 
+    .sidebarItemContainer {
+      height: 70px;
+    }
+
     .sidebar-collapse-section {
       display: none !important;
     }
@@ -2231,6 +2287,10 @@ body {
 
     .contact-button {
       padding: 0.3rem 0.3rem;
+    }
+
+    .contact-svg__img {
+      width: 90%;
     }
 
     .socialsWrapper {
