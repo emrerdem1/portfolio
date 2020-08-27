@@ -8,7 +8,7 @@ export const SidebarCollapse = () => {
 
   return (
     <div
-      className="col-2 d-flex align-items-center sidebar-collapse-section"
+      className="col-2 d-flex align-items-center sidebarItemWrapper sidebar-collapse-section"
       onClick={handleCollapse}
     >
       <div className="sidebar-item collapse-text" title="Collapse">
