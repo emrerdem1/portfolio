@@ -80,5 +80,5 @@ export const PROJECTS = [
     tools: MADLIBS_TOOLS,
     demoLink: MADLIBS_LINKS.demo,
     repoLink: MADLIBS_LINKS.repo,
-  },
+  }
 ];
