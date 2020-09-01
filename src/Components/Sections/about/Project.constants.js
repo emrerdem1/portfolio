@@ -14,9 +14,8 @@ const BOARD_DESCRIPTION = `Build a ToDo Board that users can schedule their task
             sorting boards to one's heart's content.`;
 const BOARD_TOOLS = `HTML, CSS, React-Bootstrap, Material UI, ReactJS, Firebase`;
 const BOARD_LINKS = {
-  repo:
-    "https://github.com/emrerdem1/bootcamp-istanbul-2020mar/tree/master/movie-project/Maher-Emre",
-  demo: "#",
+  repo: "https://github.com/emrerdem1/ToDo-BoardProject",
+  demo: "https://todo-board-project.netlify.app/",
 };
 
 const MOVIE_DESCRIPTION = `Do the styling of Single Movie Page that is fetched from The Movie
@@ -25,8 +24,9 @@ const MOVIE_DESCRIPTION = `Do the styling of Single Movie Page that is fetched f
             based on names, get recommendation and trailer section by using API.`;
 const MOVIE_TOOLS = `HTML, CSS, Bootstrap, Postman, Vanilla JS`;
 const MOVIE_LINKS = {
-  repo: "https://github.com/emrerdem1/ToDo-BoardProject",
-  demo: "https://todo-board-project.netlify.app/",
+  repo:
+    "https://github.com/emrerdem1/bootcamp-istanbul-2020mar/tree/master/movie-project/Maher-Emre",
+  demo: "#",
 };
 
 const PORTFOLIO_DESCRIPTION = `My playground that contains where I'm from and what my passions are as well as projects
@@ -43,7 +43,7 @@ The website is supported by dual language and aim to provide health related prod
 const ECOMMERCE_TOOLS = `HTML, SCSS, React-Bootstrap, ReactJS, Redux, i18next, Firebase, Wordpress API`;
 const ECOMMERCE_LINKS = {
   repo: "https://github.com/emrerdem1/istanbul-capstone-ecommerce",
-  demo: "http://istanbul-capstone-ecommerce.netlify.app/",
+  demo: "https://e-commerce-capstone.netlify.app/",
 };
 
 export const PROJECTS = [
