@@ -13,7 +13,7 @@ const App = () => {
     <>
       <SidebarContext.Provider value={{ isSidebarOpen, setIsSidebarOpen }}>
         <Sidebar />
-        <HomePage />
+        <HoomePage />
       </SidebarContext.Provider>
     </>
   );
