@@ -24,9 +24,8 @@ const MOVIE_DESCRIPTION = `Do the styling of Single Movie Page that is fetched f
             based on names, get recommendation and trailer section by using API.`;
 const MOVIE_TOOLS = `HTML, CSS, Bootstrap, Postman, Vanilla JS`;
 const MOVIE_LINKS = {
-  repo:
-    "https://github.com/emrerdem1/bootcamp-istanbul-2020mar/tree/master/movie-project/Maher-Emre",
-  demo: "#",
+  repo: "https://github.com/emrerdem1/movie-website_w-API",
+  demo: "https://themoviedb-api.netlify.app/",
 };
 
 const PORTFOLIO_DESCRIPTION = `My playground that contains where I'm from and what my passions are as well as projects
@@ -48,18 +47,11 @@ const ECOMMERCE_LINKS = {
 
 export const PROJECTS = [
   {
-    title: "Madlibs",
-    description: MADLIBS_DESCRIPTION,
-    tools: MADLIBS_TOOLS,
-    demoLink: MADLIBS_LINKS.demo,
-    repoLink: MADLIBS_LINKS.repo,
-  },
-  {
-    title: "Movie",
-    description: MOVIE_DESCRIPTION,
-    tools: MOVIE_TOOLS,
-    demoLink: MOVIE_LINKS.demo,
-    repoLink: MOVIE_LINKS.repo,
+    title: "E-Commerce",
+    description: ECOMMERCE_DESCRIPTION,
+    tools: ECOMMERCE_TOOLS,
+    demoLink: ECOMMERCE_LINKS.demo,
+    repoLink: ECOMMERCE_LINKS.repo,
   },
   {
     title: "Board",
@@ -76,10 +68,17 @@ export const PROJECTS = [
     repoLink: PORTFOLIO_LINKS.repo,
   },
   {
-    title: "E-Commerce",
-    description: ECOMMERCE_DESCRIPTION,
-    tools: ECOMMERCE_TOOLS,
-    demoLink: ECOMMERCE_LINKS.demo,
-    repoLink: ECOMMERCE_LINKS.repo,
+    title: "Movie",
+    description: MOVIE_DESCRIPTION,
+    tools: MOVIE_TOOLS,
+    demoLink: MOVIE_LINKS.demo,
+    repoLink: MOVIE_LINKS.repo,
+  },
+  {
+    title: "Madlibs",
+    description: MADLIBS_DESCRIPTION,
+    tools: MADLIBS_TOOLS,
+    demoLink: MADLIBS_LINKS.demo,
+    repoLink: MADLIBS_LINKS.repo,
   },
 ];
