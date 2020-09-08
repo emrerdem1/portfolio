@@ -8,7 +8,7 @@ https://emrerdem.com
 
 ### Technologies
 
-```React```
+`React`
 `Netlify`
 `SASS`
 `Bootstrap`
@@ -21,12 +21,12 @@ https://emrerdem.com
 1) `Fork` repository or create new one to push the project into later.
 
 2) Clone repository with:
-`git clone <portfolio-repository-link> <your-local-path>`
+```git clone <portfolio-repository-link> <your-local-path>```
 
 3) Install dependencies in order for project to run succesfully with:
-`yarn install`
+```yarn install```
 
 4) Runs the app in the development mode with:
-`yarn start`
+```yarn start```
 
 5) Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
