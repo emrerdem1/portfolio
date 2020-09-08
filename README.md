@@ -1,6 +1,6 @@
 ## Portfolio Website
 
-This is a portfolio website where you can learn almost everything about me, from background to the projects and interests.
+This is my portfolio where you can learn almost everything about me, from background to the projects and interests.
 
 ## Live Demo
 
