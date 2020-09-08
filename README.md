@@ -16,11 +16,17 @@ https://emrerdem.com
 `CSS`
 `Git`
 
-## Available Scripts
+### To Run the Project on Your Local Machine
 
-In the project directory, you can run:
+1) `Fork` repository or create new one to push the project into later.
 
-### `yarn start`
+2) Clone repository with:
+`git clone <portfolio-repository-link> <your-local-path>`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3) Install dependencies in order for project to run succesfully with:
+`yarn install`
+
+4) Runs the app in the development mode with:
+`yarn start`
+
+5) Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
