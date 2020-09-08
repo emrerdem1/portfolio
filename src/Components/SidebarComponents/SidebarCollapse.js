@@ -11,7 +11,7 @@ export const SidebarCollapse = () => {
       className="col-2 d-flex align-items-center sidebarItemWrapper sidebar-collapse-section"
       onClick={handleCollapse}
     >
-      <div className="sidebar-item collapse-text" title="Collapse">
+      <div className="sidebar-item collapse-text">
         <i className="fas fa-angle-double-up"></i>
       </div>
     </div>

@@ -49,10 +49,10 @@ export const SidebarItems = () => {
         className="sidebarItemContainer"
       >
         <div className="col-2 d-flex align-items-center sidebarItemWrapper sidebar-briefing">
-          <div className="sidebar-item" title="Briefing Room">
+          <div className="sidebar-item" title="Contact">
             <i className="fas fa-envelope sidebarIcon">
               {isSidebarOpen && (
-                <span className="sidebar-span">Briefing Room</span>
+                <span className="sidebar-span">Contact</span>
               )}
             </i>
           </div>

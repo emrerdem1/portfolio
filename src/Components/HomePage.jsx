@@ -13,7 +13,7 @@ export const HomePage = () => {
   return (
     <div
       id="homepage"
-      className={`col-xl-11 col-lg-11 col-md-10 col-sm-10 col-xs-12 ${sidebarStatus}`}
+      className={`col-xl-11 col-lg-11 col-md-11 col-sm-10 col-xs-12 ${sidebarStatus}`}
     >
       <IntroSection />
       <AboutMemoryProject />
