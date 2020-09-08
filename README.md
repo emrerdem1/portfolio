@@ -2,9 +2,11 @@
 
 This is my portfolio where you can learn almost everything about me, from background to the projects and interests.
 
+My playground that contains where I'm from and what my passions are as well as projects from the little scaled ones I've worked on Front-End Developer Bootcamp to the ones I'm gonna develop that I'm proud of.
+
 ## Live Demo
 
-https://emrerdem.com
+[Emre Erdem's Portolio](https://emrerdem.com)
 
 ### Technologies
 
