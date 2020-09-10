@@ -7,7 +7,7 @@ export const Hobby = () => {
       <div>
         <h2>Hobbies</h2>
         <p>
-          Stray animals become an irreplaceabla part of my life for last 4
+          Stray animals become an irreplaceable part of my life for last 4
           years! I cannot function well without getting their attention for a
           week! It's always a stress relieving for me to spend time with those
           little cuties!

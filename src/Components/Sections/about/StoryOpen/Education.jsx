@@ -26,8 +26,8 @@ export const Education = () => {
             for the summary.)
           </i>
           I finished my elementary, junior and highschool education in my
-          hometown, moving to a different state to get my bachalor's degree in{" "}
-          <span>Managament Information Systems</span> deparment where I have
+          hometown, moving to a different state to get my Bachelor's Degree in{" "}
+          <span>Management Information Systems</span> department where I have
           been got to learn a variety of programming languages and databases
           such as <span>HTML, CSS, C#, PHP</span> and <span>Oracle</span>!
         </p>
@@ -45,8 +45,8 @@ export const Education = () => {
           ! I got to learn many new approaches and get accustomed to web
           developer tools such as{" "}
           <span>
-            Vanilla JS, React, TypeScript, Firebase by building real web
-            applications and more
+            React, TypeScript, GraphQL, Redux, Firebase, Vanilla JS by building
+            real web applications and more
           </span>{" "}
           with the help of caring instructors Re:Coded Team assigned to us and
           curriculum of{" "}
@@ -58,8 +58,8 @@ export const Education = () => {
           >
             Flatiron Academy
           </a>
-          ! I, now, have gained interest in Back-End side as well and I strive
-          to be better coder from yesterday!
+          ! I have already begun to excel in Back-End side and I strive to be
+          better coder from yesterday!
         </p>
       </div>
     </div>
