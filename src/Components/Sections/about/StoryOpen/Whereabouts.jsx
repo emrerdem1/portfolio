@@ -19,20 +19,11 @@ export const Whereabouts = () => {
           >
             <span>Cappadocia</span>
           </a>
-          , Turkey where my family has been running a cute{" "}
-          <a
-            className="outer-links"
-            href="https://en.wikipedia.org/wiki/Pottery"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            pottery
-          </a>{" "}
-          workshop for generations. We basically craft the clay that we dug from
-          the generous earth to shape into vessels and specific objects. I'm
-          also an apprentice potter who's still learning the art in my leisure
-          from my father. It's actually way more difficult than it looks from
-          outside!
+          , Turkey where my family has been running a cute pottery workshop for
+          generations. We basically craft the clay that we dug from the generous
+          earth to shape into vessels and specific objects. I'm also an
+          apprentice potter who's still learning the art in my leisure from my
+          father. It's actually way more difficult than it looks from outside!
         </p>
       </div>
     </div>
