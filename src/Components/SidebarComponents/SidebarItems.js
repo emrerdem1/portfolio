@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 import { SidebarContext } from "../../App";
 
 const RESUME =
-  "https://drive.google.com/file/d/1CRa9GzqDiZ7oixoCmM1woLWZ3j_BPyMs/view?usp=sharing";
+  "https://drive.google.com/file/d/15YS4kcAdcoXQUsUb-VB1iNFJhE4yRGng/view?usp=sharing";
 
 export const SidebarItems = () => {
   const { isSidebarOpen } = useContext(SidebarContext);
