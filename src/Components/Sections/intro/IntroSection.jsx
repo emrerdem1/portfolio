@@ -3,7 +3,7 @@ import { SvgContainer } from "./SvgContainer";
 import { Link } from "react-scroll";
 
 const RESUME =
-  "https://drive.google.com/file/d/1C0B54ISLwdfqCgu4oESP_Aaiy5xI6kAw/view?usp=sharing";
+  "https://drive.google.com/file/d/1CRa9GzqDiZ7oixoCmM1woLWZ3j_BPyMs/view?usp=sharing";
 
 export const IntroSection = () => {
   const avatarContainer = (
