@@ -2,6 +2,9 @@ import React, { useContext } from "react";
 import { Link } from "react-scroll";
 import { SidebarContext } from "../../App";
 
+const RESUME =
+  "https://drive.google.com/file/d/1C0B54ISLwdfqCgu4oESP_Aaiy5xI6kAw/view?usp=sharing";
+
 export const SidebarItems = () => {
   const { isSidebarOpen } = useContext(SidebarContext);
 
@@ -74,7 +77,7 @@ export const SidebarItems = () => {
         </div>
       </Link>
       <a
-        href="https://drive.google.com/file/d/1skvHtQ5Uo9NXGxji-TJ9tJft9dGa13AB/view?usp=sharing"
+        href={RESUME}
         alt="resume"
         target="_blank"
         rel="noopener noreferrer"
