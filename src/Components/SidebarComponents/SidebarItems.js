@@ -51,9 +51,7 @@ export const SidebarItems = () => {
         <div className="col-2 d-flex align-items-center sidebarItemWrapper sidebar-briefing">
           <div className="sidebar-item" title="Contact">
             <i className="fas fa-envelope sidebarIcon">
-              {isSidebarOpen && (
-                <span className="sidebar-span">Contact</span>
-              )}
+              {isSidebarOpen && <span className="sidebar-span">Contact</span>}
             </i>
           </div>
         </div>
@@ -76,7 +74,7 @@ export const SidebarItems = () => {
         </div>
       </Link>
       <a
-        href="https://drive.google.com/file/d/1XJtv2TdBuCnwXA7IUpwt2CSqRIncnU2Z/view?usp=sharing"
+        href="https://drive.google.com/file/d/1skvHtQ5Uo9NXGxji-TJ9tJft9dGa13AB/view?usp=sharing"
         alt="resume"
         target="_blank"
         rel="noopener noreferrer"
