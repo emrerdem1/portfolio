@@ -490,7 +490,7 @@ body {
   }
   .row {
     min-height: 300px;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
 
     .about-greetings {
       min-height: 100px;
@@ -761,7 +761,6 @@ body {
       linear-gradient($bg-color ($dot-space - $dot-size), transparent 1%) center,
       $dot-color;
     background-size: $dot-space $dot-space;
-    margin-top: -40px;
 
     &::before {
       content: "";
@@ -1024,7 +1023,6 @@ body {
     background-blend-mode: hard-light, color, screen, soft-light;
     margin: auto;
     width: 100%;
-    margin-top: -40px;
 
     &::before {
       content: "";
@@ -1700,6 +1698,8 @@ body {
     }
 
     #about-section {
+      margin-bottom: 0;
+
       &::before {
         height: calc(100% + 500px);
       }
@@ -1760,6 +1760,10 @@ body {
             z-index: 0;
           }
         }
+      }
+
+      .row {
+        margin-bottom: 0;
       }
     }
 
@@ -2235,8 +2239,8 @@ body {
   #root #homepage {
     #about-section {
       margin-top: -100px;
-      margin-bottom: -150px;
-      padding-top: 50px 0 50px;
+      margin-bottom: -50px;
+      padding: 50px 0 50px;
 
       .project-open {
         margin-top: -70px;
@@ -2246,6 +2250,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        min-height: 200px;
 
         &--story,
         &--memory {
