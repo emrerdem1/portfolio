@@ -18,7 +18,7 @@ export const StoryOpen = () => {
 
   return (
     <div className="story-open" ref={scrollToStory}>
-      <h2>Here's all about you need to know about me!</h2>
+      <h2>Memoir</h2>
       <Whereabouts />
       <Education />
       <Hobby />

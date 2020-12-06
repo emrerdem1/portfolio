@@ -41,9 +41,7 @@ export const ProjectOpen = () => {
 
   return (
     <div className="project-open" ref={scrollToProject}>
-      <h2 className="col-12 projectGeneralTitle">
-        Check out the project I have done so far!
-      </h2>
+      <h2 className="col-12 projectGeneralTitle">The Projects</h2>
       <div className="col-12 project-open__wrapper">{projectBlock}</div>
     </div>
   );
