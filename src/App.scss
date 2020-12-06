@@ -1667,6 +1667,11 @@ body {
     .projectIcon.showStoryLast {
       transform: translateX(-75%);
     }
+
+    .project-open,
+    .story-open {
+      margin-top: -40px;
+    }
   }
 }
 
@@ -1699,6 +1704,11 @@ body {
 
     #about-section {
       margin-bottom: 0;
+
+      .project-open,
+      .story-open {
+        margin-top: 0px;
+      }
 
       &::before {
         height: calc(100% + 500px);
