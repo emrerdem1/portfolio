@@ -21,11 +21,11 @@ export const IntroSection = () => {
           <h2 className="juniorName">Emre Erdem</h2>
         </div>
         <div className="intro-box__header--break"></div>
-        <span className="junior-dev">Junior Web Developer</span>
+        <span className="junior-dev">Full Stack Developer</span>
       </div>
       <p className="introText">
-        A <span className="webdeveloper">web developer</span> who is fond of
-        coding, lifelong learning and petting stray cats! And I do build
+        A <span className="webdeveloper">software developer</span> who is fond
+        of coding, lifelong learning and petting stray cats! And I do build
         aesthetic and useful websites and applications!
       </p>
       <div className="intro-box__buttons">
