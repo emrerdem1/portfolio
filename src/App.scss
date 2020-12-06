@@ -662,7 +662,7 @@ body {
         background-color: $primary-color;
         left: 50%;
         transform: translateX(-50%);
-        bottom: -10px;
+        bottom: -6px;
       }
     }
 
@@ -766,13 +766,13 @@ body {
     &::before {
       content: "";
       position: absolute;
-      width: 50px;
-      height: 50px;
-      top: -9.5px;
+      width: 30px;
+      height: 30px;
+      top: -6px;
       left: 50%;
       transform: rotate(45deg) translateX(-50%);
       transform-origin: center;
-      background: linear-gradient(135deg, #161122 50%, transparent 100%);
+      background: linear-gradient(135deg, #161122 50%, transparent 55%);
       border: 3px ridge #848b90;
       border-right: none;
       border-bottom: none;
@@ -789,12 +789,12 @@ body {
       &::before {
         content: "";
         position: absolute;
-        width: 10%;
+        width: 15%;
         height: 3px;
         background-color: $primary-color;
         left: 50%;
         transform: translateX(-50%);
-        bottom: -10px;
+        bottom: -6px;
       }
     }
 
@@ -802,7 +802,7 @@ body {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      margin: 10px auto 130px;
+      margin: 10px auto;
       flex-wrap: wrap;
       padding: 0;
 
@@ -1029,9 +1029,9 @@ body {
     &::before {
       content: "";
       position: absolute;
-      width: 50px;
-      height: 50px;
-      top: -9.5px;
+      width: 30px;
+      height: 30px;
+      top: -6px;
       left: 50%;
       transform: rotate(45deg) translateX(-50%);
       transform-origin: center;
@@ -1077,7 +1077,7 @@ body {
         background-color: $primary-color;
         left: 50%;
         transform: translateX(-50%);
-        bottom: -10px;
+        bottom: -6px;
       }
 
       &::after {
@@ -2126,13 +2126,17 @@ body {
 
         p,
         i {
-          font-size: 2.4vw;
+          font-size: 14px;
+          letter-spacing: 0;
         }
 
-        h2,
-        h2::after {
-          font-size: 3.2vw;
+        h2 {
+          font-size: 22px;
         }
+      }
+
+      .projectGeneralTitle::before {
+        width: 25%;
       }
     }
 
@@ -2174,10 +2178,6 @@ body {
           margin-left: 80px;
         }
       }
-    }
-
-    .projectGeneralTitle {
-      font-size: 1.2rem;
     }
   }
 
@@ -2265,6 +2265,7 @@ body {
 
         p {
           padding: 15px;
+          font-size: 13px;
         }
 
         > div {
