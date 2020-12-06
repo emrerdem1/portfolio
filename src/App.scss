@@ -1997,6 +1997,7 @@ body {
 
         .anchorGroup {
           bottom: 0;
+          margin-left: 50px;
         }
       }
     }
@@ -2169,6 +2170,8 @@ body {
 
         .anchorGroup {
           bottom: 10px;
+          width: 150px;
+          margin-left: 80px;
         }
       }
     }
@@ -2305,6 +2308,10 @@ body {
     .svg-tools {
       font-size: 0.7rem;
       line-height: unset;
+    }
+
+    .anchorGroup {
+      left: 0;
     }
   }
 
