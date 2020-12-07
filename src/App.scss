@@ -362,7 +362,7 @@ body {
         height: 90px;
         padding-left: 100px;
 
-        h2 {
+        .developerTitle {
           position: absolute !important;
           font-size: 3.1rem;
           font-variant: all-petite-caps;
@@ -384,15 +384,34 @@ body {
             );
             z-index: -1;
             bottom: 10px;
+            transition: all 0.2s ease-out;
           }
 
-          &:nth-of-type(1) {
-            -webkit-text-stroke: 1.5px #868080;
-            //color: transparent;
+          &:hover::before {
+            transform: translateY(10px);
+            height: 6px;
           }
 
-          &:nth-of-type(2) {
-            //color: transparent;
+          span {
+            position: relative;
+            display: inline-block;
+            font-size: 3rem;
+            background: linear-gradient(
+              to bottom,
+              white,
+              white 60%,
+              $bg-color 60%,
+              $bg-color 100%
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-repeat: no-repeat;
+            transition: background 0.2s ease-out;
+
+            &:hover {
+              background-position: 0 11px;
+            }
           }
         }
       }
@@ -1622,8 +1641,12 @@ body {
             padding: 0.4rem 0.3rem;
           }
         }
-        .juniorName {
+
+        .developerTitle {
           font-size: 2.6rem;
+
+          span {
+          }
         }
 
         .junior-dev {
