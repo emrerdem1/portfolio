@@ -1,4 +1,3 @@
-export const TEMPLATE_ID = "template_07g2QsLL";
-export const SERVICE_ID = "gmail";
-export const USER_ID = "user_OMBI7FMwfSXGYdIsJHB6l";
-//const ACCESS_TOKEN = "942f1606a7bc94b87ce5eae205b0ed16";
+export const TEMPLATE_ID = "template_mo46eem";
+export const SERVICE_ID = "service_97w1o0a";
+export const USER_ID = "user_L04fXu9pDZ5K9668PFzC1";
