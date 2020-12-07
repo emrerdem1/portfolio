@@ -16,6 +16,18 @@ body {
   font-family: $font-second;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: $second-color-bright;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $button-fire;
+}
+
 #root {
   width: 100%;
   height: 100%;
@@ -446,7 +458,7 @@ body {
         text-decoration: none;
         border-radius: 4px;
         color: #ffffffa6;
-        background-image: linear-gradient(45deg, #e4745a 0%, #f44336cc 100%);
+        background-image: $button-fire;
         box-shadow: 0px 17px 10px -10px rgba(0, 0, 0, 0.42);
         border-bottom: solid 3px #c58668;
         font-size: 13px;
