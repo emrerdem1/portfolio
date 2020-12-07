@@ -18,7 +18,7 @@ export const IntroSection = () => {
       <div className="intro-box__header">
         <div className="intro-box__header--double">
           <h2 className="developerTitle">
-            <span>Emre Erdem</span>
+           Emre Erdem
           </h2>
         </div>
         <div className="intro-box__header--break"></div>
