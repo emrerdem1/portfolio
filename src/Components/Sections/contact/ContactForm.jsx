@@ -1,55 +1,20 @@
 import React, { useState, useEffect } from "react";
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, message } from "antd";
 import emailjs from "emailjs-com";
 import { init } from "emailjs-com";
 import { SERVICE_ID, TEMPLATE_ID, USER_ID, RECAPTCHA_KEY } from "./EmailCredit";
 import Reaptcha from "reaptcha";
+import "antd/es/message/style/index.css";
 
 export const ContactForm = () => {
   const [form] = Form.useForm();
 
   const [isRecaptchaVerified, setIsRecaptchaVerified] = useState(false);
   const [isRecaptchaLoaded, setIsRecaptchaLoaded] = useState(false);
-  const [inputValue, setInput] = useState({
-    user_name: null,
-    user_mail: null,
-    user_gsm: null,
-    user_subject: null,
-    user_message: null,
-  });
 
   useEffect(() => {
     init(USER_ID);
   }, []);
-
-  const handleForm = ({ target }) =>
-    setInput((prevState) => {
-      return { ...prevState, [target.name]: target.value };
-    });
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-    if (isRecaptchaVerified) {
-      console.log(
-        "verified,",
-        SERVICE_ID,
-        TEMPLATE_ID,
-        inputValue,
-        USER_ID,
-        emailjs
-      );
-      /*emailjs.send(SERVICE_ID, TEMPLATE_ID, inputValue, USER_ID).then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-        },
-        (err) => {
-          console.log("FAILED...", err);
-        }
-      );*/
-    } else {
-      console.log("not verified");
-    }
-  };
 
   const onVerify = (recaptchaResponse) => {
     if (!recaptchaResponse) {
@@ -60,7 +25,21 @@ export const ContactForm = () => {
   };
 
   const handleSubmit = (values) => {
-    console.log(values);
+    if (isRecaptchaVerified) {
+      console.log("verified,", SERVICE_ID, TEMPLATE_ID, USER_ID, emailjs);
+      /*emailjs.send(SERVICE_ID, TEMPLATE_ID, inputValue, USER_ID).then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+        },
+        (err) => {
+          console.log("FAILED...", err);
+        }
+      );*/
+      message.success("Your message is sent successfully.");
+      form.resetFields();
+    } else {
+      message.warning("Please confirm you are a beautiful human.");
+    }
   };
 
   const validateMessages = {
@@ -86,11 +65,9 @@ export const ContactForm = () => {
             layout="vertical"
             form={form}
             onFinish={handleSubmit}
+            autoComplete="off"
             validateMessages={validateMessages}
           >
-            <Form.Item label="Name" name="user_name">
-              <Input placeholder="Your name" />
-            </Form.Item>
             <Form.Item
               label="E-mail"
               name="user_mail"
