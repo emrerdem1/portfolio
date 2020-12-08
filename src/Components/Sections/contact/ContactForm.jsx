@@ -37,10 +37,10 @@ export const ContactForm = () => {
   };
 
   const validateMessages = {
-    required: "${label} is required!",
+    required: "This field is required!",
     types: {
-      email: "${label} is not a valid email!",
-      number: "${label} is not a valid number!",
+      email: "This is not a valid email!",
+      number: "This is not a valid number!",
     },
   };
 
@@ -53,68 +53,66 @@ export const ContactForm = () => {
         </p>
         <svg className="contact-svg__img"></svg>
       </div>
-      <div className="row contact-form__wrapper">
-        <div className="col-12 col-lg-6 col-md-12 col-sm-12 form-container">
-          <Form
-            layout="vertical"
-            form={form}
-            onFinish={handleSubmit}
-            autoComplete="off"
-            validateMessages={validateMessages}
+      <div className="col-12 col-lg-6 col-md-12 col-sm-12 form-container">
+        <Form
+          layout="vertical"
+          form={form}
+          onFinish={handleSubmit}
+          autoComplete="off"
+          validateMessages={validateMessages}
+        >
+          <Form.Item
+            label="E-mail"
+            name="user_mail"
+            rules={[{ required: true, type: "email" }]}
           >
-            <Form.Item
-              label="E-mail"
-              name="user_mail"
-              rules={[{ required: true, type: "email" }]}
+            <Input placeholder="Your e-mail" />
+          </Form.Item>
+          <Form.Item label="Contact" name="user_gsm">
+            <Input placeholder="Your contact number" />
+          </Form.Item>
+          <Form.Item
+            name="user_subject"
+            label="Subject"
+            rules={[
+              {
+                required: true,
+                message: "Please enter your email for me to reply you later.",
+              },
+            ]}
+          >
+            <Input placeholder="Subject" />
+          </Form.Item>
+          <Form.Item
+            name="user_message"
+            label="Message"
+            rules={[
+              {
+                required: true,
+              },
+            ]}
+          >
+            <Input.TextArea placeholder="Kindly let me know how can I help you." />
+          </Form.Item>
+          <Form.Item style={{ textAlign: "center" }}>
+            <Button
+              htmlType="submit"
+              className="contact-button"
+              disabled={!isRecaptchaLoaded}
             >
-              <Input placeholder="Your e-mail" />
-            </Form.Item>
-            <Form.Item label="Contact" name="user_gsm">
-              <Input placeholder="Your contact number" />
-            </Form.Item>
-            <Form.Item
-              name="user_subject"
-              label="Subject"
-              rules={[
-                {
-                  required: true,
-                  message: "Please enter your email for me to reply you later.",
-                },
-              ]}
-            >
-              <Input placeholder="Subject" />
-            </Form.Item>
-            <Form.Item
-              name="user_message"
-              label="Message"
-              rules={[
-                {
-                  required: true,
-                },
-              ]}
-            >
-              <Input.TextArea placeholder="Kindly let me know how can I help you." />
-            </Form.Item>
-            <Form.Item style={{ textAlign: "center" }}>
-              <Button
-                htmlType="submit"
-                className="contact-button"
-                disabled={!isRecaptchaLoaded}
-              >
-                Send
-              </Button>
-              <Reaptcha
-                theme="dark"
-                ref={captchaItem}
-                sitekey={RECAPTCHA_KEY}
-                onLoad={() => setIsRecaptchaLoaded(true)}
-                onVerify={onVerify}
-                onExpire={() => setIsRecaptchaVerified(false)}
-                className="formRecaptcha"
-              />
-            </Form.Item>
-          </Form>
-        </div>
+              Send
+            </Button>
+            <Reaptcha
+              theme="dark"
+              ref={captchaItem}
+              sitekey={RECAPTCHA_KEY}
+              onLoad={() => setIsRecaptchaLoaded(true)}
+              onVerify={onVerify}
+              onExpire={() => setIsRecaptchaVerified(false)}
+              className="formRecaptcha"
+            />
+          </Form.Item>
+        </Form>
       </div>
     </div>
   );
