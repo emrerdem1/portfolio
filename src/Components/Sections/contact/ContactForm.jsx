@@ -37,10 +37,14 @@ export const ContactForm = () => {
   };
 
   const validateMessages = {
-    required: "This field is required!",
+    // Linter throws an error when we try to use "label" variable here
+    // without template literals, and Antd doesn't have a good way for this.
+    // https://ant.design/components/form/#components-form-demo-register
+    // Instead, just override required "email" message here for now.
+    required: "Please enter your email.",
     types: {
-      email: "This is not a valid email!",
-      number: "This is not a valid number!",
+      email: `Enter a valid email!`,
+      number: `Enter a valid number!`,
     },
   };
 
@@ -64,7 +68,12 @@ export const ContactForm = () => {
           <Form.Item
             label="E-mail"
             name="user_mail"
-            rules={[{ required: true, type: "email" }]}
+            rules={[
+              {
+                required: true,
+                type: "email",
+              },
+            ]}
           >
             <Input placeholder="Your e-mail" />
           </Form.Item>
@@ -77,11 +86,11 @@ export const ContactForm = () => {
             rules={[
               {
                 required: true,
-                message: "Please enter your email for me to reply you later.",
+                message: "Please enter the subject.",
               },
             ]}
           >
-            <Input placeholder="Subject" />
+            <Input placeholder="What is it about?" />
           </Form.Item>
           <Form.Item
             name="user_message"
@@ -89,6 +98,7 @@ export const ContactForm = () => {
             rules={[
               {
                 required: true,
+                message: "Please enter your message.",
               },
             ]}
           >

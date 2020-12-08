@@ -1225,7 +1225,7 @@ body {
 
 // There is a brief moment that error message is duplicated
 // while it shouldn't be seen after the condition is met.
-// It leaves fading sligtly if I specificly import related stylesheet,
+// It leaves fading slightly if I import related stylesheet implicitly,
 // I just don't want to see it fading.
 .ant-form-item-has-success .ant-form-item-explain {
   display: none;
