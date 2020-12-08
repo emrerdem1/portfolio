@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Form, Input, Button, message } from "antd";
 import emailjs from "emailjs-com";
 import { init } from "emailjs-com";
@@ -9,6 +9,7 @@ import "antd/es/message/style/index.css";
 export const ContactForm = () => {
   const [form] = Form.useForm();
 
+  const captchaItem = useRef();
   const [isRecaptchaVerified, setIsRecaptchaVerified] = useState(false);
   const [isRecaptchaLoaded, setIsRecaptchaLoaded] = useState(false);
 
@@ -26,17 +27,10 @@ export const ContactForm = () => {
 
   const handleSubmit = (values) => {
     if (isRecaptchaVerified) {
-      console.log("verified,", SERVICE_ID, TEMPLATE_ID, USER_ID, emailjs);
-      /*emailjs.send(SERVICE_ID, TEMPLATE_ID, inputValue, USER_ID).then(
-        (response) => {
-          console.log("SUCCESS!", response.status, response.text);
-        },
-        (err) => {
-          console.log("FAILED...", err);
-        }
-      );*/
+      emailjs.send(SERVICE_ID, TEMPLATE_ID, values, USER_ID);
       message.success("Your message is sent successfully.");
       form.resetFields();
+      captchaItem.current.reset();
     } else {
       message.warning("Please confirm you are a beautiful human.");
     }
@@ -111,9 +105,11 @@ export const ContactForm = () => {
               </Button>
               <Reaptcha
                 theme="dark"
+                ref={captchaItem}
                 sitekey={RECAPTCHA_KEY}
                 onLoad={() => setIsRecaptchaLoaded(true)}
                 onVerify={onVerify}
+                onExpire={() => setIsRecaptchaVerified(false)}
                 className="formRecaptcha"
               />
             </Form.Item>
