@@ -1225,6 +1225,24 @@ body {
   position: relative;
   min-width: 100%;
 
+  // Override default antd classes.
+  .ant-form-item-label {
+    text-align: left;
+    padding-left: 30px;
+
+    label {
+      margin-bottom: 0;
+    }
+  }
+
+  .ant-form-item {
+    margin-bottom: 10px;
+  }
+
+  .formRecaptcha {
+    margin: 20px auto;
+  }
+
   .contact-header {
     width: 100vw;
     position: relative;
