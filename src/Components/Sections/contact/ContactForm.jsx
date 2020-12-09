@@ -26,21 +26,29 @@ export const ContactForm = () => {
   };
 
   const handleSubmit = (values) => {
-    if (isRecaptchaVerified) {
-      emailjs.send(SERVICE_ID, TEMPLATE_ID, values, USER_ID);
-      message.success("Your message is sent successfully.");
-      form.resetFields();
-      captchaItem.current.reset();
-    } else {
-      message.warning("Please confirm you are a beautiful human.");
+    if (!isRecaptchaLoaded) {
+      message.error(
+        "Recaptcha couldn't be loaded. Please contact me via email."
+      );
+      return;
     }
+
+    if (!isRecaptchaVerified) {
+      message.warning("Please confirm you are a beautiful human.");
+      return;
+    }
+
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, values, USER_ID);
+    message.success("Your message is sent successfully.");
+    form.resetFields();
+    captchaItem.current.reset();
   };
 
   const validateMessages = {
     // Linter throws an error when we try to use "label" variable here
     // without template literals, and Antd doesn't have a good way for this.
     // https://ant.design/components/form/#components-form-demo-register
-    // Instead, just override required "email" message here for now.
+    // Instead, just target required "email" message here for now.
     required: "Please enter your email.",
     types: {
       email: `Enter a valid email!`,
@@ -104,12 +112,8 @@ export const ContactForm = () => {
           >
             <Input.TextArea placeholder="Kindly let me know how can I help you." />
           </Form.Item>
-          <Form.Item style={{ textAlign: "center" }}>
-            <Button
-              htmlType="submit"
-              className="contact-button"
-              disabled={!isRecaptchaLoaded}
-            >
+          <Form.Item className="submitItem">
+            <Button htmlType="submit" className="contact-button">
               Send
             </Button>
             <Reaptcha
