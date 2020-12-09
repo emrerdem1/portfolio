@@ -44,8 +44,8 @@ export const ContactForm = () => {
     required: "Please enter your email.",
     types: {
       email: `Enter a valid email!`,
-      number: `Enter a valid number!`,
     },
+    whitespace: true,
   };
 
   return (
