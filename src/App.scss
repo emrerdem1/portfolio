@@ -1390,8 +1390,8 @@ body {
     .form-container {
       max-width: 550px;
       max-height: 750px;
-      margin-top: 20px;
-      margin-bottom: 20px;
+      margin-top: 30px;
+      margin-bottom: 30px;
       padding: 20px;
       max-height: 750px;
       color: #ffffffd4;
@@ -1437,6 +1437,12 @@ body {
           font-size: 12px;
           padding-left: 30px;
           font-weight: 600;
+        }
+
+        // Form.Item that is responsible of submitting.
+        .submitItem {
+          margin-bottom: 0;
+          text-align: center;
         }
 
         input,
@@ -2029,7 +2035,7 @@ body {
     .form-container {
       margin-right: 0;
       margin-bottom: 40px;
-      max-width: 400px;
+      max-width: 90%;
     }
 
     #social-links {
