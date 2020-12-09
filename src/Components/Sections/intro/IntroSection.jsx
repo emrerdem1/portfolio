@@ -17,16 +17,14 @@ export const IntroSection = () => {
     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 intro-box">
       <div className="intro-box__header">
         <div className="intro-box__header--double">
-          <h2 className="developerTitle">
-           Emre Erdem
-          </h2>
+          <h2 className="developerTitle">Emre Erdem</h2>
         </div>
         <div className="intro-box__header--break"></div>
-        <span className="junior-dev">Full Stack Developer</span>
+        <span className="fullstack-dev">Full Stack Developer</span>
       </div>
       <p className="introText">
-        A <span className="webdeveloper">software developer</span> who is fond
-        of coding, lifelong learning and petting stray cats! And I do build
+        A <span className="software-developer">software developer</span> who is
+        fond of coding, lifelong learning and petting stray cats! And I do build
         aesthetic and useful websites and applications!
       </p>
       <div className="intro-box__buttons">
