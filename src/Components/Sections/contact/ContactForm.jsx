@@ -74,7 +74,7 @@ export const ContactForm = () => {
           validateMessages={validateMessages}
         >
           <Form.Item
-            label="E-mail"
+            label="Email"
             name="user_mail"
             rules={[
               {
@@ -83,7 +83,7 @@ export const ContactForm = () => {
               },
             ]}
           >
-            <Input placeholder="Your e-mail" />
+            <Input placeholder="Your email" />
           </Form.Item>
           <Form.Item label="Contact" name="user_gsm">
             <Input placeholder="Your contact number" />
@@ -110,7 +110,10 @@ export const ContactForm = () => {
               },
             ]}
           >
-            <Input.TextArea placeholder="Kindly let me know how can I help you." />
+            <Input.TextArea
+              placeholder="Kindly let me know how can I help you."
+              rows="4"
+            />
           </Form.Item>
           <Form.Item className="submitItem">
             <Button htmlType="submit" className="contact-button">
