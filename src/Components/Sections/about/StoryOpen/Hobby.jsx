@@ -34,8 +34,8 @@ export const Hobby = () => {
           enthusiast so much so that I've been started translating subtitles of
           them from English to Turkish since the highschool days! I have
           completed dozen hundreds of subtitles for Anime series that I loved,
-          but I do it rarely now as I focused on becoming a full-fledged web
-          developer!
+          but I do it rarely now as I focused on becoming a full-fledged software
+          engineer!
         </p>
       </div>
     </div>
