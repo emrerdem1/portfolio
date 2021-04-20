@@ -1,9 +1,7 @@
-import React from "react";
-import { SvgContainer } from "./SvgContainer";
-import { Link } from "react-scroll";
-
-const RESUME =
-  "https://drive.google.com/file/d/15YS4kcAdcoXQUsUb-VB1iNFJhE4yRGng/view?usp=sharing";
+import React from 'react';
+import { SvgContainer } from './SvgContainer';
+import { Link } from 'react-scroll';
+import { RESUME } from '../about/Project.constants';
 
 export const IntroSection = () => {
   const avatarContainer = (
