@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from "react";
-import { PROJECTS } from "./Project.constants";
+import React, { useEffect, useRef } from 'react';
+import { PROJECTS } from './Project.constants';
 
 const MOVE_VERTICAL_AMOUNT = 350;
 
@@ -11,7 +11,7 @@ export const ProjectOpen = () => {
       window.scrollTo({
         top: scrollToProject.current.offsetTop + MOVE_VERTICAL_AMOUNT,
         left: 0,
-        behavior: "smooth",
+        behavior: 'smooth',
       }),
     []
   );
