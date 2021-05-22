@@ -840,7 +840,7 @@ body {
         min-height: 400px;
         width: 100%;
         margin: 0;
-        margin-bottom: 30px;
+        margin-bottom: 120px;
 
         .projectTitleName {
           display: block;
@@ -1326,6 +1326,7 @@ body {
     justify-content: space-around;
     align-items: center;
     max-width: 100%;
+    padding: 50px 0;
 
     &::before {
       content: '';
@@ -1512,8 +1513,7 @@ body {
 }
 
 #social-links {
-  height: 170px;
-  min-height: 150px;
+  min-height: 250px;
   position: relative;
   z-index: 50;
   border-top: 2px dashed #2d2c2c;
@@ -1833,10 +1833,6 @@ body {
           }
         }
       }
-
-      .row {
-        margin-bottom: 0;
-      }
     }
 
     #about-section.opened::before {
@@ -1855,12 +1851,6 @@ body {
       &__img {
         width: 300px;
         margin: 20px auto;
-      }
-    }
-
-    #contact-section {
-      .contact-form__wrapper {
-        padding-top: 50px;
       }
     }
 
@@ -2216,10 +2206,6 @@ body {
       }
     }
 
-    .contact-form__wrapper {
-      padding: 0;
-    }
-
     .form-container {
       font-size: 0.9rem;
     }
@@ -2227,6 +2213,7 @@ body {
     #social-links {
       justify-content: center;
       padding: 0;
+      min-height: 170px;
 
       .socialSectionSvg {
         display: none;
@@ -2307,15 +2294,21 @@ body {
 }
 
 @include media(phone-sm) {
+  #contact-section {
+    .contact-form__wrapper {
+      .form-container {
+        background-image: none;
+      }
+    }
+  }
+}
+
+@include media(phone-xs) {
   #root #homepage {
     #about-section {
       margin-top: -100px;
       margin-bottom: -50px;
       padding: 50px 0 50px;
-
-      .project-open {
-        margin-top: -70px;
-      }
 
       .main-hall__icons {
         display: flex;
@@ -2359,7 +2352,6 @@ body {
       min-width: 320px;
       padding-right: 5px;
       padding-left: 5px;
-      background-image: none;
 
       input,
       textarea {
@@ -2418,7 +2410,15 @@ body {
 
   #sidebar {
     .sidebar-item::after {
-      font-size: 9px;
+      display: none;
+    }
+    .sidebar-item:hover .sidebarIcon {
+      padding: 0;
+    }
+
+    .fas,
+    .fab {
+      font-size: 25px !important;
     }
   }
 }
@@ -2449,21 +2449,5 @@ body {
   &:hover::before {
     height: 100%;
     background-image: linear-gradient(45deg, #e4745a70 0%, #f44336b5 100%);
-  }
-}
-
-@include media(phone-xs) {
-  #sidebar {
-    .sidebar-item::after {
-      display: none;
-    }
-    .sidebar-item:hover .sidebarIcon {
-      padding: 0;
-    }
-
-    .fas,
-    .fab {
-      font-size: 25px !important;
-    }
   }
 }
