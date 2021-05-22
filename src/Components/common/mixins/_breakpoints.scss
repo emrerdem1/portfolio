@@ -1,10 +1,10 @@
 @mixin media($breakpoint) {
   @if $breakpoint == phone-xs {
-    @media only screen and (max-width: 320px) {
+    @media only screen and (max-width: 375px) {
       @content;
     }
   } @else if $breakpoint == phone-sm {
-    @media only screen and (max-width: 375px) {
+    @media only screen and (max-width: 420px) {
       @content;
     }
   } @else if $breakpoint == phone {
