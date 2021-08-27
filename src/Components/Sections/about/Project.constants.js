@@ -1,5 +1,5 @@
 export const RESUME =
-  'https://drive.google.com/file/d/1hLrYw7qWC6no24OY3opiz_oBxZOO7_UK/view?usp=sharing';
+  'https://drive.google.com/file/d/1vU0RngCDDcVfP7t3vAcT_QDp1Ncf61Iz/view?usp=sharing';
 
 const MADLIBS_DESCRIPTION = `Write out a full story that is processed into a format that will
             allow the one to keep track of "blanks". Whenever the user updates a
