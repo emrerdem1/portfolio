@@ -1,5 +1,5 @@
 export const RESUME =
-  'https://drive.google.com/file/d/1vU0RngCDDcVfP7t3vAcT_QDp1Ncf61Iz/view?usp=sharing';
+  'https://drive.google.com/file/d/1eGdMg925taAFXOeO509YHS4X4eLlhsWt/view?usp=sharing';
 
 const MADLIBS_DESCRIPTION = `Write out a full story that is processed into a format that will
             allow the one to keep track of "blanks". Whenever the user updates a
@@ -48,7 +48,35 @@ const ECOMMERCE_LINKS = {
   demo: 'https://e-commerce-capstone.netlify.app/',
 };
 
+const TEETER_TOTTER_DESCRIPTION = `Balance teeter-totter according to the falling items. Produce dynamic weights, shapes and coordinates for both players. Calculate torque based on the size and coordinate. `;
+const TEETER_TOTTER_TOOLS = `ReactJS, Redux, TypeScript, Emotion Styled Components, HTML, SCSS, Git`;
+const TEETER_TOTTER_LINKS = {
+  repo: 'https://github.com/emrerdem1/teeter-totter-game',
+  demo: 'https://teeter-totter-game.netlify.app/',
+};
+
+const SIMPLE_UI_DESCRIPTION = `User should stay on the same page when localization changes. Navigating to a new page or going back should not change the language set. Logout button deletes "User Info" from site-wide/global state.`;
+const SIMPLE_UI_TOOLS = `ReactJS, Redux, TypeScript, i18next, AntD, Emotion Styled Components, HTML, SCSS, Git`;
+const SIMPLE_UI_LINKS = {
+  repo: 'https://github.com/emrerdem1/simple-ui',
+  demo: 'https://the-simple-ui.netlify.app/',
+};
+
 export const PROJECTS = [
+  {
+    title: 'Teeter-Totter',
+    description: TEETER_TOTTER_DESCRIPTION,
+    tools: TEETER_TOTTER_TOOLS,
+    demoLink: TEETER_TOTTER_LINKS.demo,
+    repoLink: TEETER_TOTTER_LINKS.repo,
+  },
+  {
+    title: 'Simple-UI',
+    description: SIMPLE_UI_DESCRIPTION,
+    tools: SIMPLE_UI_TOOLS,
+    demoLink: SIMPLE_UI_LINKS.demo,
+    repoLink: SIMPLE_UI_LINKS.repo,
+  },
   {
     title: 'E-Commerce',
     description: ECOMMERCE_DESCRIPTION,

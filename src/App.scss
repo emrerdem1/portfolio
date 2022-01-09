@@ -1038,6 +1038,14 @@ body {
         .projectImg.Portfolio::before {
           background: url('./svg/projects/portfolio.svg') no-repeat;
         }
+
+        .projectImg.Teeter-Totter::before {
+          background: url('./svg/projects/teeter-totter.svg') no-repeat;
+        }
+
+        .projectImg.Simple-UI::before {
+          background: url('./svg/projects/simple-ui.png') no-repeat;
+        }
       }
     }
   }
