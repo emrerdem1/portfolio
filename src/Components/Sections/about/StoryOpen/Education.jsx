@@ -1,7 +1,12 @@
+import useFirestoreDoc from 'Components/common/hooks/useFirestoreDoc';
+import { CollectionNames } from 'Components/common/utils/firebaseHelper';
 import React from 'react';
-import { RESUME } from '../Project.constants';
 
 export const Education = () => {
+  const { docs: resume } = useFirestoreDoc({
+    collectionName: CollectionNames.RESUME,
+  });
+
   return (
     <div className="story-open__education">
       <svg className="story-open__education--svg2"></svg>
@@ -12,8 +17,8 @@ export const Education = () => {
             (You can download{' '}
             <span>
               <a
+                href={resume[0] && resume[0]?.url}
                 className="outer-links"
-                href={RESUME}
                 title="CV"
                 target="_blank"
                 rel="noopener noreferrer"

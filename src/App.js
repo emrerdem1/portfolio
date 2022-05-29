@@ -1,8 +1,8 @@
-import React, { useState, createContext } from "react";
-import "bootstrap/dist/css/bootstrap.css";
-import "./App.scss";
-import { HomePage } from "./Components/HomePage";
-import { Sidebar } from "./Components/Sidebar";
+import React, { useState, createContext } from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import './App.scss';
+import { HomePage } from './Components/HomePage';
+import { Sidebar } from './Components/Sidebar';
 
 export const SidebarContext = createContext(null);
 

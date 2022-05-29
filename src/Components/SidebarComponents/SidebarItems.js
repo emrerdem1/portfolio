@@ -1,10 +1,14 @@
-import { RESUME } from 'Components/Sections/about/Project.constants';
 import React, { useContext } from 'react';
+import useFirestoreDoc from 'Components/common/hooks/useFirestoreDoc';
 import { Link } from 'react-scroll';
 import { SidebarContext } from '../../App';
+import { CollectionNames } from 'Components/common/utils/firebaseHelper';
 
 export const SidebarItems = () => {
   const { isSidebarOpen } = useContext(SidebarContext);
+  const { docs: resume } = useFirestoreDoc({
+    collectionName: CollectionNames.RESUME,
+  });
 
   return (
     <>
@@ -75,7 +79,7 @@ export const SidebarItems = () => {
         </div>
       </Link>
       <a
-        href={RESUME}
+        href={resume[0] && resume[0]?.url}
         alt="resume"
         target="_blank"
         rel="noopener noreferrer"
