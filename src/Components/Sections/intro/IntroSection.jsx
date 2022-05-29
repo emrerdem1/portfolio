@@ -1,9 +1,14 @@
 import React from 'react';
 import { SvgContainer } from './SvgContainer';
 import { Link } from 'react-scroll';
-import { RESUME } from '../about/Project.constants';
+import useFirestoreDoc from 'Components/common/hooks/useFirestoreDoc';
+import { CollectionNames } from 'Components/common/utils/firebaseHelper';
 
 export const IntroSection = () => {
+  const { docs: resume } = useFirestoreDoc({
+    collectionName: CollectionNames.RESUME,
+  });
+
   const avatarContainer = (
     <div className="col-xl-4 col-lg-5 col-md-6 col-sm-6 avatar-container">
       <div className="avatar"></div>
@@ -40,7 +45,7 @@ export const IntroSection = () => {
         </div>
         <div className="view-resume">
           <a
-            href={RESUME}
+            href={resume[0] && resume[0]?.url}
             title="View Resume"
             target="_blank"
             rel="noopener noreferrer"

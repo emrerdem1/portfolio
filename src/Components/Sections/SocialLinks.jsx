@@ -1,34 +1,28 @@
-import React from "react";
+import React from 'react';
+import useFirestoreDoc from 'Components/common/hooks/useFirestoreDoc';
+import { CollectionNames } from 'Components/common/utils/firebaseHelper';
 
 export const SocialLinks = () => {
+  const { docs: socialLinks } = useFirestoreDoc({
+    sortBy: 'order',
+    collectionName: CollectionNames.CONTACT_LINKS,
+  });
+
   return (
     <div id="social-links">
       <svg className="socialSectionSvg"></svg>
       <div className="socialsWrapper">
-        <a
-          href="https://www.linkedin.com/in/emrerdem94/"
-          alt="linkedin"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-linkedin"></i>
-        </a>
-        <a
-          href="https://github.com/emrerdem1"
-          alt="github"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-github-square"></i>
-        </a>
-        <a
-          href="https://www.instagram.com/herecomesemre/"
-          alt="instagram"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <i className="fab fa-instagram-square"></i>
-        </a>
+        {socialLinks.map((social) => (
+          <a
+            key={social.name}
+            href={social.url}
+            alt={social.name}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i className={`fab fa-${social.name}`}></i>
+          </a>
+        ))}
       </div>
     </div>
   );

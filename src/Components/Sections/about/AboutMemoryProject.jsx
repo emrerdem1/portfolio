@@ -1,40 +1,52 @@
-import React, { useReducer, useEffect, useRef } from "react";
-import { StoryOpen, ProjectOpen } from "./export_about";
+import useFirestoreDoc from 'Components/common/hooks/useFirestoreDoc';
+import { CollectionNames } from 'Components/common/utils/firebaseHelper';
+import React, { useReducer, useEffect, useRef } from 'react';
+import { StoryOpen, ProjectOpen } from './export_about';
+import Projects from './Projects';
 
 const MOVE_VERTICAL_TO_MEMORY = 276;
 const MOVE_TO_START_OF_SECTION = -70;
+const INITIAL_TOGGLE_STATE = {
+  story: false,
+  memory: false,
+  project: false,
+  neutral: true,
+};
+
+const Sections = {
+  STORY: 'STORY',
+  PROJECT: 'PROJECT',
+  MEMORY: 'MEMORY',
+};
 
 const elementToScroll = (ref, position) =>
   window.scrollTo({
     top: ref.current.offsetTop + position,
     left: 0,
-    behavior: "smooth",
+    behavior: 'smooth',
   });
 
 function reducer(state, action) {
   switch (action.type) {
-    case "story":
+    case Sections.STORY:
       return {
         story: !state.story,
         memory: false,
         project: false,
-        neutral: false,
       };
 
-    case "memory":
+    case Sections.MEMORY:
       return {
         memory: !state.memory,
         story: false,
         project: false,
-        neutral: false,
       };
 
-    case "project":
+    case Sections.PROJECT:
       return {
         project: !state.project,
         memory: false,
         story: false,
-        neutral: false,
       };
 
     default:
@@ -42,37 +54,53 @@ function reducer(state, action) {
   }
 }
 
-export const AboutMemoryProject = () => {
-  const [{ story, memory, project, neutral }, dispatch] = useReducer(reducer, {
-    story: false,
-    memory: false,
-    project: false,
-    neutral: true,
-  });
+const _getIconTransitionClassname = (isStoryActive, isProjectActive) => {
+  if (!isStoryActive && !isProjectActive) return '';
+  if (isStoryActive) return 'showStoryLast';
+  return 'showProjectLast';
+};
 
+const _getCustomToggleClassname = ({ story, project, memory }) => {
+  if (story || project) return 'opened';
+  if (memory) return 'memoryOpenedClassName';
+  return '';
+};
+
+export const AboutMemoryProject = () => {
+  const [{ story, memory, project, neutral }, dispatch] = useReducer(
+    reducer,
+    INITIAL_TOGGLE_STATE
+  );
+  const { docs: projects } = useFirestoreDoc({
+    sortBy: 'order',
+    collectionName: CollectionNames.PROJECTS,
+  });
   const memoryIconRef = useRef(null);
   const wrapperRef = useRef(null);
 
-  const iconTransitions = story
-    ? "showStoryLast"
-    : project
-    ? "showProjectLast"
-    : "";
-
-  const invokeReducer = (section) => dispatch({ type: section });
-
   useEffect(() => {
+    if (neutral) return;
+    // All sections are closed.
+    if (!story && !project && !memory) {
+      elementToScroll(wrapperRef, MOVE_TO_START_OF_SECTION);
+      return;
+    }
+
     if (memory) {
       elementToScroll(memoryIconRef, MOVE_VERTICAL_TO_MEMORY);
-    } else if (!story && !project && !memory && !neutral) {
-      elementToScroll(wrapperRef, MOVE_TO_START_OF_SECTION);
     }
   }, [story, memory, project, neutral]);
 
+  const invokeReducer = (section) => dispatch({ type: section });
+
   const storyIcon = (
     <div
-      className={`col-xl-4 col-lg-3 col-md-5 col-sm-12 col-xs-10 main-hall__icons storyIcon ${iconTransitions}`}
-      onClick={() => invokeReducer("story")}
+      className={`${_getIconTransitionClassname(
+        story,
+        project
+      )} col-xl-4 col-lg-3 col-md-5 col-sm-12 col-xs-10 main-hall__icons storyIcon`}
+      data-name={Sections.STORY}
+      onClick={(e) => invokeReducer(e.currentTarget.dataset.name)}
     >
       <svg className="main-hall__icons--story"></svg>
     </div>
@@ -80,8 +108,12 @@ export const AboutMemoryProject = () => {
 
   const projectIcon = (
     <div
-      className={`col-xl-4 col-lg-5 col-md-5 col-sm-12 col-xs-10 main-hall__icons projectIcon ${iconTransitions}`}
-      onClick={() => invokeReducer("project")}
+      className={`${_getIconTransitionClassname(
+        story,
+        project
+      )} col-xl-4 col-lg-5 col-md-5 col-sm-12 col-xs-10 main-hall__icons projectIcon`}
+      data-name={Sections.PROJECT}
+      onClick={(e) => invokeReducer(e.currentTarget.dataset.name)}
     >
       <svg className="main-hall__icons--project"></svg>
     </div>
@@ -89,21 +121,27 @@ export const AboutMemoryProject = () => {
 
   const memoryIcon = (
     <div
-      className={`col-xl-4 col-lg-4 col-md-5 col-sm-12 col-xs-10 main-hall__icons memoryIcon ${iconTransitions}`}
-      onClick={() => invokeReducer("memory")}
+      className={`${_getIconTransitionClassname(
+        story,
+        project
+      )} col-xl-4 col-lg-4 col-md-5 col-sm-12 col-xs-10 main-hall__icons memoryIcon`}
+      data-name={Sections.MEMORY}
+      onClick={(e) => invokeReducer(e.currentTarget.dataset.name)}
       ref={memoryIconRef}
     >
       <div
-        className={`main-hall__icons--memory ${memory ? "memoryOpened" : ""} `}
+        className={`main-hall__icons--memory ${memory ? 'memoryOpened' : ''} `}
       ></div>
     </div>
   );
 
   return (
     <div
-      className={`container ${
-        story || project ? "opened" : memory ? "memoryOpenedClassName" : ""
-      }`}
+      className={`${_getCustomToggleClassname({
+        story,
+        project,
+        memory,
+      })} container`}
       id="about-section"
       ref={wrapperRef}
     >
@@ -120,7 +158,12 @@ export const AboutMemoryProject = () => {
         {projectIcon}
         {memoryIcon}
       </div>
-      {story ? <StoryOpen /> : project && <ProjectOpen />}
+      {story && <StoryOpen />}
+      {project && (
+        <ProjectOpen>
+          <Projects projects={projects} />
+        </ProjectOpen>
+      )}
     </div>
   );
 };
