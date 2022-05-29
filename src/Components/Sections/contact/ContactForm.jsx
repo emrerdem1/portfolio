@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Form, Input, Button, message } from "antd";
-import emailjs from "emailjs-com";
-import { init } from "emailjs-com";
-import { SERVICE_ID, TEMPLATE_ID, USER_ID, RECAPTCHA_KEY } from "./EmailCredit";
-import Reaptcha from "reaptcha";
-import "antd/es/message/style/index.css";
+import React, { useState, useEffect, useRef } from 'react';
+import { Form, Input, Button, message } from 'antd';
+import emailjs from 'emailjs-com';
+import { init } from 'emailjs-com';
+import Reaptcha from 'reaptcha';
+import 'antd/es/message/style/index.css';
 
 export const ContactForm = () => {
   const [form] = Form.useForm();
@@ -14,7 +13,7 @@ export const ContactForm = () => {
   const [isRecaptchaLoaded, setIsRecaptchaLoaded] = useState(false);
 
   useEffect(() => {
-    init(USER_ID);
+    init(process.env.REACT_APP_USER_ID);
   }, []);
 
   const onVerify = (recaptchaResponse) => {
@@ -34,12 +33,17 @@ export const ContactForm = () => {
     }
 
     if (!isRecaptchaVerified) {
-      message.warning("Please confirm you are a beautiful human.");
+      message.warning('Please confirm you are a beautiful human.');
       return;
     }
 
-    emailjs.send(SERVICE_ID, TEMPLATE_ID, values, USER_ID);
-    message.success("Your message is sent successfully.");
+    emailjs.send(
+      process.env.REACT_APP_SERVICE_ID,
+      process.env.REACT_APP_TEMPLATE_ID,
+      values,
+      process.env.REACT_APP_USER_ID
+    );
+    message.success('Your message is sent successfully.');
     form.resetFields();
     captchaItem.current.reset();
   };
@@ -49,7 +53,7 @@ export const ContactForm = () => {
     // without template literals, and Antd doesn't have a good way for this.
     // https://ant.design/components/form/#components-form-demo-register
     // Instead, just target required "email" message here for now.
-    required: "Please enter your email.",
+    required: 'Please enter your email.',
     types: {
       email: `Enter a valid email!`,
     },
@@ -79,7 +83,7 @@ export const ContactForm = () => {
             rules={[
               {
                 required: true,
-                type: "email",
+                type: 'email',
               },
             ]}
           >
@@ -94,7 +98,7 @@ export const ContactForm = () => {
             rules={[
               {
                 required: true,
-                message: "Please enter the subject.",
+                message: 'Please enter the subject.',
               },
             ]}
           >
@@ -106,7 +110,7 @@ export const ContactForm = () => {
             rules={[
               {
                 required: true,
-                message: "Please enter your message.",
+                message: 'Please enter your message.',
               },
             ]}
           >
@@ -122,7 +126,7 @@ export const ContactForm = () => {
             <Reaptcha
               theme="dark"
               ref={captchaItem}
-              sitekey={RECAPTCHA_KEY}
+              sitekey={process.env.REACT_APP_RECAPTCHA_KEY}
               onLoad={() => setIsRecaptchaLoaded(true)}
               onVerify={onVerify}
               onExpire={() => setIsRecaptchaVerified(false)}
